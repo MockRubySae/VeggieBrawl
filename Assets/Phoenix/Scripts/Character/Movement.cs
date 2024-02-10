@@ -32,6 +32,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // check if player is sprinting
+        Sprint();
         // check if the player is moving
         if (horizontalInput != 0 || verticalInput != 0)
         {
@@ -54,5 +56,21 @@ public class Movement : MonoBehaviour
         // also make the speed not dependent on frame rate
         // move the possition of the player
         transform.position += movedirection * speed * Time.deltaTime;
+    }
+    void Sprint()
+    {
+        // get the imput of shift
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            // make speed 1.5 times bigger
+            speed = 15f;
+        }
+        // when the shift key is not pressed return speed to normal
+        else
+        {
+            // set speed to normal
+            speed = 10f;
+        }
+        
     }
 }
