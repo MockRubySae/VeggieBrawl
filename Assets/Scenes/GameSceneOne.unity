@@ -609,7 +609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
-  movementSpeed: {fileID: 0}
+  movementSpeed: {fileID: 1177358286}
   strength: 1
   Intelligence: 1
   AttackSpeed: 1
