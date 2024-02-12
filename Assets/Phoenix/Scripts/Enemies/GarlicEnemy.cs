@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class GarlicEnemy : MonoBehaviour
 {
+    public PlayerStats stats;
     // make a refreance to the players posision 
-    public GameObject playerPos;
+    public Transform playerPos;
+    
     // rigidbody refreance
     Rigidbody rb;
     // make speed half of player
@@ -16,19 +18,18 @@ public class GarlicEnemy : MonoBehaviour
     {
         // give rigid body
         rb = GetComponent<Rigidbody>();
-        playerPos = GameObject.Find("Player");
+        playerPos = GameObject.Find("Player").transform;
+        stats = GameObject.Find("Player").GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // make a varible for where to look
-        Vector3 lookpos = playerPos.transform.position;
-        // make the enemy look  at player while standing
-        transform.LookAt(lookpos, Vector3.up);
+        // make the enemy look  at camera while standing
+        transform.LookAt(Camera.main.transform, Vector3.up);
         // make varible to move the enemy times by deltatime so that it does not change with frame rate
         var step = speed * Time.deltaTime;
         // move from current position to the position of the player
-        transform.position = Vector3.MoveTowards(transform.position, lookpos, step);
+        transform.position = Vector3.MoveTowards(transform.position, playerPos.transform.position, step);
     }
 }
