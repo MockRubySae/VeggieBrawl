@@ -32,4 +32,5 @@ public class GarlicEnemy : MonoBehaviour
         // move from current position to the position of the player
         transform.position = Vector3.MoveTowards(transform.position, playerPos.transform.position, step);
     }
+
 }
