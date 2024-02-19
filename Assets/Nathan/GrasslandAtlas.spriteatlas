@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GrasslandAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 8beb0b613487b0d468ee1b0c619bd7f9, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 0375cef7e2c08ad409994d87368b318e: 191891753
+    - 0375cef7e2c08ad409994d87368b318e: -301993340
+    - 0375cef7e2c08ad409994d87368b318e: 561566939
+    - 0375cef7e2c08ad409994d87368b318e: -1447031678
+    - 0375cef7e2c08ad409994d87368b318e: -1515702149
+    - 0375cef7e2c08ad409994d87368b318e: 1790010159
+    - 0375cef7e2c08ad409994d87368b318e: -944995398
+    - 0375cef7e2c08ad409994d87368b318e: -658754688
+    - 0375cef7e2c08ad409994d87368b318e: 2029637664
+    - 0375cef7e2c08ad409994d87368b318e: -504854585
+    - 1069ab5aaec175341ade7d229378d1b4: 1682069882
+    - 1069ab5aaec175341ade7d229378d1b4: -382730566
+    - 1069ab5aaec175341ade7d229378d1b4: -2031542044
+    - 1069ab5aaec175341ade7d229378d1b4: -1374742437
+    - 1069ab5aaec175341ade7d229378d1b4: 2134576054
+    - 1069ab5aaec175341ade7d229378d1b4: 487107094
+    - 1069ab5aaec175341ade7d229378d1b4: 1666851788
+    - 1069ab5aaec175341ade7d229378d1b4: 748546401
+    - 1069ab5aaec175341ade7d229378d1b4: -1344819104
+    - 1069ab5aaec175341ade7d229378d1b4: 496677941
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 191891753, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: -301993340, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: 561566939, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: -1447031678, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: -1515702149, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: 1790010159, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: -944995398, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: -658754688, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: 2029637664, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: -504854585, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: 1682069882, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: -382730566, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: -2031542044, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: -1374742437, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: 2134576054, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: 487107094, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: 1666851788, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: 748546401, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: -1344819104, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: 496677941, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_4
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_5
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_6
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_7
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_0
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_1
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_2
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_3
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_8
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_9
+  - Grassy Tileset_9
+  - Grassy Tileset_8
+  - Grassy Tileset_5
+  - Grassy Tileset_4
+  - Grassy Tileset_7
+  - Grassy Tileset_6
+  - Grassy Tileset_1
+  - Grassy Tileset_0
+  - Grassy Tileset_3
+  - Grassy Tileset_2
+  m_RenderDataMap: {}
+  m_Tag: GrasslandAtlas
+  m_IsVariant: 0
