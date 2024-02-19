@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bc0e7d01ac16f1c4cae379e95746f1c0
+guid: d93043de1a178794c868568493905259
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -175,7 +175,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ExtraGrass_0
+      name: irradiateddirt_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8286af85df17a1943ad06125b7874e86
+      internalID: 1383822929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: irradiateddirt_1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 480
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d472182a4ef2b24697b1c2844067018
+      internalID: -876243612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: irradiateddirt_2
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 480
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d96bbe576e9f6f459f594271e81ae06
+      internalID: 46138650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: irradiateddirt_3
       rect:
         serializedVersion: 2
         x: 0
@@ -189,14 +252,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3164b7b3b1ded77459b7ba8b17b9e68c
-      internalID: 926204964
+      spriteID: dc555caf3a10f804aa865a48bc7524b0
+      internalID: -139588221
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ExtraGrass_1
+      name: irradiateddirt_4
       rect:
         serializedVersion: 2
         x: 240
@@ -210,14 +273,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4530e382d6f853346bf99f8b76d87e18
-      internalID: 1884572960
+      spriteID: a1a25e08ed769c84fb768804a51b3c69
+      internalID: 927517853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ExtraGrass_2
+      name: irradiateddirt_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 240
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72392658edff9f3408091566276c69a4
+      internalID: 1963369247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: irradiateddirt_6
       rect:
         serializedVersion: 2
         x: 0
@@ -231,8 +315,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d258ce199bb36f4fab05790a8d63edb
-      internalID: -1345202258
+      spriteID: 0bd29f27e5a14de4ba684a93a0354f30
+      internalID: 1701992659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: irradiateddirt_7
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eee344462f206d43b3fa6a48e4a9799
+      internalID: -171252572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: irradiateddirt_8
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e2708cd7bea354386951b9a72f23cc
+      internalID: 409485192
       vertices: []
       indices: 
       edges: []
@@ -248,9 +374,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ExtraGrass_0: 926204964
-      ExtraGrass_1: 1884572960
-      ExtraGrass_2: -1345202258
+      irradiateddirt_0: 1383822929
+      irradiateddirt_1: -876243612
+      irradiateddirt_2: 46138650
+      irradiateddirt_3: -139588221
+      irradiateddirt_4: 927517853
+      irradiateddirt_5: 1963369247
+      irradiateddirt_6: 1701992659
+      irradiateddirt_7: -171252572
+      irradiateddirt_8: 409485192
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
