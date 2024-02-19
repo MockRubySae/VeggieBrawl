@@ -16,12 +16,18 @@ public class GarlicEnemy : MonoBehaviour
     // make speed half of player
     float speed = 5.0f;
     // Start is called before the first frame update
+
+    private Animator spriteAnimComp;
+
     void Start()
     {
         // give rigid body
         rb = GetComponent<Rigidbody>();
         playerPos = GameObject.Find("Player").transform;
         stats = GameObject.Find("Player").GetComponent<PlayerStats>();
+
+        spriteAnimComp = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -35,7 +41,7 @@ public class GarlicEnemy : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, playerPos.transform.position, step);
         if(health <= 0)
         {
-            Destroy(gameObject);
+            spriteAnimComp.Play("garlicSpider_death");
         }
     }
 
@@ -51,9 +57,21 @@ public class GarlicEnemy : MonoBehaviour
     }
     IEnumerator Wait()
     {
+        spriteAnimComp.Play("garlicSpider_attack");
         yield return new WaitForSeconds(1f);
         speed = 5f;
         isAttacking = false;
+        spriteAnimComp.Play("garlicSpider_move");
     }
 
+    void CallDestroy()
+    {
+        StartCoroutine(DestroyEntity());
+    }
+
+    IEnumerator DestroyEntity()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
+    }
 }

@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2bfe75a6666f3409f001c80c27014e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  garlicEnemy: {fileID: 7671647606465761923, guid: db97aea5bb32f2c48bfd490b512c2740, type: 3}
+  garlicEnemy: {fileID: 7802110312025191858, guid: 825d49beb75365f4faee3655d4d23b43, type: 3}
 --- !u!1 &251461054
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2bfe75a6666f3409f001c80c27014e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  garlicEnemy: {fileID: 7671647606465761923, guid: db97aea5bb32f2c48bfd490b512c2740, type: 3}
+  garlicEnemy: {fileID: 7802110312025191858, guid: 825d49beb75365f4faee3655d4d23b43, type: 3}
 --- !u!1 &912881474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2bfe75a6666f3409f001c80c27014e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  garlicEnemy: {fileID: 7671647606465761923, guid: db97aea5bb32f2c48bfd490b512c2740, type: 3}
+  garlicEnemy: {fileID: 7802110312025191858, guid: 825d49beb75365f4faee3655d4d23b43, type: 3}
 --- !u!1 &961516466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,7 +1380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2bfe75a6666f3409f001c80c27014e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  garlicEnemy: {fileID: 7671647606465761923, guid: db97aea5bb32f2c48bfd490b512c2740, type: 3}
+  garlicEnemy: {fileID: 7802110312025191858, guid: 825d49beb75365f4faee3655d4d23b43, type: 3}
 --- !u!1 &1072915321
 GameObject:
   m_ObjectHideFlags: 0
