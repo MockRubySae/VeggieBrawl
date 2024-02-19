@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.Examples;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,7 +9,8 @@ public class GarlicEnemy : MonoBehaviour
     public PlayerStats stats;
     // make a refreance to the players posision 
     public Transform playerPos;
-    
+    public float health = 2;
+    bool isAttacking = false;
     // rigidbody refreance
     Rigidbody rb;
     // make speed half of player
@@ -31,6 +33,27 @@ public class GarlicEnemy : MonoBehaviour
         var step = speed * Time.deltaTime;
         // move from current position to the position of the player
         transform.position = Vector3.MoveTowards(transform.position, playerPos.transform.position, step);
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isAttacking)
+        {
+            stats.health = stats.health - 1;
+            isAttacking = true;
+            speed = 0f;
+            StartCoroutine(Wait());
+        }
+    }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1f);
+        speed = 5f;
+        isAttacking = false;
     }
 
 }
