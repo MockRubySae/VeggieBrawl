@@ -6,6 +6,7 @@ public class GarlicPickUp : MonoBehaviour
 {
     public GarlicFillAmount garlic;
     public Movement player;
+    public GameObject pressE;
     // rigidbody refreance
     Rigidbody rb;
     // make speed half of player
@@ -19,6 +20,7 @@ public class GarlicPickUp : MonoBehaviour
 
         garlic = GameObject.Find("GarlicMutationManager").GetComponent<GarlicFillAmount>();
         player = GameObject.Find("Player").GetComponent<Movement>();
+        pressE = gameObject.transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -35,12 +37,20 @@ public class GarlicPickUp : MonoBehaviour
             Debug.Log("isEaing");
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        pressE.SetActive(true);
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        pressE.SetActive(false);
+    }
     IEnumerator Eating()
     {
         Debug.Log("starting to eat");
         player.speed = 0f;
-        yield return new WaitForSeconds(5);
-        garlic.GarlicGain(10);
+        yield return new WaitForSeconds(1);
+        garlic.GarlicGain(25);
         player.speed = 10f;
         Destroy(gameObject);
         Debug.Log("finished eatingt");

@@ -128,6 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
   playerPos: {fileID: 0}
+  health: 2
+  garlicDrop: {fileID: 3530928800879872796, guid: 4d48fd1cb0c9b3c43a95d421fa0ed2dd, type: 3}
 --- !u!135 &1127721135845964238
 SphereCollider:
   m_ObjectHideFlags: 0

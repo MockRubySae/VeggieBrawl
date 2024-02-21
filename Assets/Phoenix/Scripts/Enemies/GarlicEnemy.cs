@@ -16,6 +16,7 @@ public class GarlicEnemy : MonoBehaviour
     // make speed half of player
     float speed = 5.0f;
     // Start is called before the first frame update
+    public GameObject garlicDrop;
 
     private Animator spriteAnimComp;
 
@@ -25,8 +26,8 @@ public class GarlicEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerPos = GameObject.Find("Player").transform;
         stats = GameObject.Find("Player").GetComponent<PlayerStats>();
-
         spriteAnimComp = GetComponent<Animator>();
+        garlicDrop = GameObject.Find("GarlicDrop");
 
     }
 
@@ -71,6 +72,11 @@ public class GarlicEnemy : MonoBehaviour
 
     IEnumerator DestroyEntity()
     {
+        int changeToDrop = Random.Range(0, 10);
+        if (changeToDrop == 5)
+        {
+            Instantiate(garlicDrop, transform.position, transform.rotation);
+        }
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
     }
