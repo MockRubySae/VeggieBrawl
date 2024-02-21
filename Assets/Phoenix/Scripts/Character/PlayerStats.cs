@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour
     public float AttackDamage = 1.0f;
     public float luck = 1.0f;
     public float defence = 1.0f;
-    public float mutation = 0.0f;
+    public float garlicMutation = 0.0f;
     public GameObject player;
     // Start is called before the first frame update
     void Start()
