@@ -937,6 +937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fists: {fileID: 7326570723416107376, guid: 30142e924ce15044d80427966b4d9280, type: 3}
   speedOfFists: 1500
+  playerStats: {fileID: 1177358292}
 --- !u!1 &485225014
 GameObject:
   m_ObjectHideFlags: 0
