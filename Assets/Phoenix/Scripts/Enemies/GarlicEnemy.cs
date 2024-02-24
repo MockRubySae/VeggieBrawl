@@ -71,6 +71,7 @@ public class GarlicEnemy : MonoBehaviour
 
     IEnumerator DestroyEntity()
     {
+        ScoreManager.instance.EnemyAddPoint();
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
     }
