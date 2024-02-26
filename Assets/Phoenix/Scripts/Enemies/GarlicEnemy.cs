@@ -17,7 +17,6 @@ public class GarlicEnemy : MonoBehaviour
     float speed = 5.0f;
     // Start is called before the first frame update
     public GameObject garlicDrop;
-
     private Animator spriteAnimComp;
 
     void Start()
@@ -73,10 +72,11 @@ public class GarlicEnemy : MonoBehaviour
     IEnumerator DestroyEntity()
     {
         int changeToDrop = Random.Range(0, 10);
-        if (changeToDrop == 5)
+        if (changeToDrop >= 8)
         {
             Instantiate(garlicDrop, transform.position, transform.rotation);
         }
+        ScoreManager.instance.EnemyAddPoint();
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
     }

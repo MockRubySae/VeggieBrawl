@@ -18,7 +18,7 @@ public class GarlicPickUp : MonoBehaviour
         // give rigid body
         rb = GetComponent<Rigidbody>();
 
-        garlic = GameObject.Find("GarlicMutationManager").GetComponent<GarlicFillAmount>();
+        garlic = GameObject.Find("Canvas").GetComponent<GarlicFillAmount>();
         player = GameObject.Find("Player").GetComponent<Movement>();
         pressE = gameObject.transform.GetChild(0).gameObject;
     }
