@@ -51,6 +51,7 @@ public class GarlicPickUp : MonoBehaviour
         player.speed = 0f;
         yield return new WaitForSeconds(1);
         garlic.GarlicGain(25);
+        ScoreManager.instance.EnemyAddPoint(500);
         player.speed = 10f;
         Destroy(gameObject);
         Debug.Log("finished eatingt");

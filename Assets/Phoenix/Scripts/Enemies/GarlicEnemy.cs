@@ -76,7 +76,7 @@ public class GarlicEnemy : MonoBehaviour
         {
             Instantiate(garlicDrop, transform.position, transform.rotation);
         }
-        ScoreManager.instance.EnemyAddPoint();
+        ScoreManager.instance.EnemyAddPoint(100);
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
     }
