@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Fists : MonoBehaviour
 {
+    public PlayerStats player;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player").GetComponent<PlayerStats>();
         StartCoroutine(DestroyAfter());
     }
 
@@ -24,7 +26,7 @@ public class Fists : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent<GarlicEnemy>(out GarlicEnemy enemy))
         {
-            enemy.health = enemy.health - 1;
+            enemy.health = enemy.health - player.strength;
         }
     }
 }

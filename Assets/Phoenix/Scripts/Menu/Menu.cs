@@ -24,5 +24,6 @@ public class Menu : MonoBehaviour
         menuUi.SetActive(false);
         Time.timeScale = 1f;
         inGameUi.SetActive(true);
+        ScoreManager.instance.ScoreReset();
     }
 }

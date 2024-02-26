@@ -9,26 +9,25 @@ public class GarlicFillAmount : MonoBehaviour
     public float garlicMutationAmount;
     public Image garlicBar;
     public PlayerStats playerStats;
+    int timesUpGarded;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyUp(KeyCode.Space))
-        {
-            GarlicGain(10);
-        }
+        timesUpGarded = 1;
     }
     public void GarlicGain(float gain)
     {
-        garlicMutationAmount += gain;
+        garlicMutationAmount += gain/timesUpGarded;
         garlicMutationAmount = Mathf.Clamp(garlicMutationAmount,0f,100f);
-        garlicBar.fillAmount = garlicMutationAmount/100;
+        garlicBar.fillAmount = garlicMutationAmount/100f;
 
         playerStats.garlicMutation = garlicMutationAmount;
+    }
+    public void Reset()
+    {
+        garlicMutationAmount = 0f;
+        garlicMutationAmount = Mathf.Clamp(garlicMutationAmount, 0f, 100f);
+        garlicBar.fillAmount = garlicMutationAmount / 100;
+        timesUpGarded++;
     }
 }

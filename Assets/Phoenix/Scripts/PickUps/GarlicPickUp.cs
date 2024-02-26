@@ -7,6 +7,7 @@ public class GarlicPickUp : MonoBehaviour
     public GarlicFillAmount garlic;
     public Movement player;
     public GameObject pressE;
+    public PlayerStats playerStats;
     // rigidbody refreance
     Rigidbody rb;
     // make speed half of player
@@ -21,6 +22,7 @@ public class GarlicPickUp : MonoBehaviour
         garlic = GameObject.Find("Canvas").GetComponent<GarlicFillAmount>();
         player = GameObject.Find("Player").GetComponent<Movement>();
         pressE = gameObject.transform.GetChild(0).gameObject;
+        playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class GarlicPickUp : MonoBehaviour
         yield return new WaitForSeconds(1);
         garlic.GarlicGain(25);
         player.speed = 10f;
+        playerStats.health = playerStats.health + 10;
         Destroy(gameObject);
         Debug.Log("finished eatingt");
     }

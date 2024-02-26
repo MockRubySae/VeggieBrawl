@@ -8,11 +8,8 @@ public class PlayerStats : MonoBehaviour
     public float maxHealth = 100f;
     public Movement movementSpeed;
     public float strength = 1.0f;
-    public float Intelligence = 1.0f;
     public float AttackSpeed = 1.0f;
-    public float AttackDamage = 1.0f;
     public float luck = 1.0f;
-    public float defence = 1.0f;
     public float garlicMutation = 0.0f;
     public GameObject player;
     // Start is called before the first frame update
@@ -24,6 +21,6 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        health = Mathf.Clamp(health, 0f, maxHealth);
     }
 }

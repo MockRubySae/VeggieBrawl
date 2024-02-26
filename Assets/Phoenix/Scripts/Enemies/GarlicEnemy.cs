@@ -47,7 +47,7 @@ public class GarlicEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isAttacking)
+        if (!isAttacking && health > 0)
         {
             stats.health = stats.health - 1;
             isAttacking = true;

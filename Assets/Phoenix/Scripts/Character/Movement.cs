@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -17,6 +18,7 @@ public class Movement : MonoBehaviour
     Rigidbody rb;
     public bool isWalking = false;
     public bool isSprinting = false;
+    public bool isToggleSprint = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,14 @@ public class Movement : MonoBehaviour
     void Update()
     {
         // check if player is sprinting
-        Sprint();
+        if (!isToggleSprint)
+        {
+            Sprint();
+        }
+        else if (isToggleSprint)
+        {
+            SprintToggle();
+        }
         Dust();
         Walking();
         // get the axis for horzontal movement
@@ -46,23 +55,41 @@ public class Movement : MonoBehaviour
         // move the possition of the player
         transform.position += movedirection * speed * Time.deltaTime;
     }
-    void Sprint()
+    void SprintToggle()
     {
         // get the imput of shift
-        if(Input.GetKey(KeyCode.LeftShift) && speed != 0 )
+        if(Input.GetKeyDown(KeyCode.LeftShift) && speed != 0 && isSprinting == false)
         {
             // make speed 1.5 times bigger
             speed = 15f;
             isSprinting = true;
         }
         // when the shift key is not pressed return speed to normal
-        else if(speed != 0 )
+        else if(Input.GetKeyDown(KeyCode.LeftShift) && speed != 0 && isSprinting == true)
         {
             // set speed to normal
             speed = 10f;
             isSprinting = false;
         }
         
+    }
+    void Sprint()
+    {
+        // get the imput of shift
+        if (Input.GetKey(KeyCode.LeftShift) && speed != 0 && isSprinting == false)
+        {
+            // make speed 1.5 times bigger
+            speed = 15f;
+            isSprinting = true;
+        }
+        // when the shift key is not pressed return speed to normal
+        else if (speed != 0)
+        {
+            // set speed to normal
+            speed = 10f;
+            isSprinting = false;
+        }
+
     }
     void Dust()
     {

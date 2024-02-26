@@ -61,4 +61,8 @@ public class ScoreManager : MonoBehaviour
     {
         score += 100;
     }
+    public void ScoreReset()
+    {
+        score = 0;
+    }
 }

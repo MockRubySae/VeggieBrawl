@@ -16,6 +16,6 @@ public class HealthCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthCount.text = "Health: " + playerStats.health.ToString();
+        healthCount.text = "Health: " + playerStats.health.ToString() + "/" + playerStats.maxHealth.ToString();
     }
 }
