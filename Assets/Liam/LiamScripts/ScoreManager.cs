@@ -8,10 +8,10 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager instance;
 
     public TextMeshProUGUI scoreText;
-    //public TextMeshProUGUI highscoreText;
+    public TextMeshProUGUI highscoreText;
 
     int score = 0;
-    //int highscore = 0;
+    int highscore = 0;
 
     private float nextScoreTime = 0.0f;
     public float period = 1f;
@@ -24,7 +24,9 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        highscore = PlayerPrefs.GetInt("highscore", 0);
         scoreText.text = "Score: " + score.ToString();
+        highscoreText.text = "Highscore: " + highscore.ToString();
     }
 
     // Update is called once per frame
@@ -55,11 +57,16 @@ public class ScoreManager : MonoBehaviour
                 score += 100;
             }
         }
+
+        if(highscore < score)
+        {
+            PlayerPrefs.SetInt("highscore", score);
+        }
     }
 
-    public void EnemyAddPoint()
+    public void EnemyAddPoint(int points)
     {
-        score += 100;
+        score += points;
     }
     public void ScoreReset()
     {
