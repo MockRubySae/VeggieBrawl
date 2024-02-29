@@ -11,6 +11,7 @@ public class GarlicEnemy : MonoBehaviour
     public Transform playerPos;
     public float health = 2;
     bool isAttacking = false;
+    public bool isDead = false;
     // rigidbody refreance
     Rigidbody rb;
     // make speed half of player
@@ -33,14 +34,19 @@ public class GarlicEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // make the enemy look  at camera while standing
-        transform.LookAt(Camera.main.transform, Vector3.up);
-        // make varible to move the enemy times by deltatime so that it does not change with frame rate
-        var step = speed * Time.deltaTime;
-        // move from current position to the position of the player
-        transform.position = Vector3.MoveTowards(transform.position, playerPos.transform.position, step);
+        if (!isDead)
+        {
+            // make the enemy look  at camera while standing
+            transform.LookAt(Camera.main.transform, Vector3.up);
+            // make varible to move the enemy times by deltatime so that it does not change with frame rate
+            var step = speed * Time.deltaTime;
+            // move from current position to the position of the player
+            transform.position = Vector3.MoveTowards(transform.position, playerPos.transform.position, step);
+        }
+       
         if(health <= 0)
         {
+            isDead = true;
             spriteAnimComp.Play("garlicSpider_death");
         }
     }

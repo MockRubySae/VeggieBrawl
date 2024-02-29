@@ -1907,6 +1907,7 @@ MonoBehaviour:
   stats: {fileID: 0}
   playerPos: {fileID: 0}
   health: 2
+  garlicDrop: {fileID: 0}
 --- !u!1 &7811246394827385239
 GameObject:
   m_ObjectHideFlags: 0

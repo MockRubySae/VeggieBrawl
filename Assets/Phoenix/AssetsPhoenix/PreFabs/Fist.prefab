@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2256622855713222420}
   - component: {fileID: 1534588717249948171}
   - component: {fileID: -4596018795255746790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,10 +129,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!114 &-4596018795255746790
 MonoBehaviour:
@@ -146,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429714fa2dbbda14e860700747f78af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fist: {fileID: 7326570723416107376}
+  player: {fileID: 0}

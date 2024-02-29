@@ -17,12 +17,16 @@ public class Attack : MonoBehaviour
     public GameObject uiFists;
     public GameObject pitchFork;
     public GameObject uiPitchFork;
+    public GameObject carrotSpear;
+    public GameObject uiCarrotSpear;
     public float speedOfFists = 1500f;
-    public float speedOfPitchFork = 1500f;
+    public float speedOfPitchFork = 3000f;
+    public float speedOfCarrotSpear = 6000f;
     public PlayerStats playerStats;
     public bool isAttacking = false;
     public bool isFists = false;
     public bool isPitchFork = false;
+    public bool isCarrotSpear = false;
     public bool currentlyAttacking = false;
     Dictionary<string, WeaponsStates> states = new Dictionary<string, WeaponsStates>();
     WeaponsStates currentState = null;
@@ -32,6 +36,7 @@ public class Attack : MonoBehaviour
     {
         states.Add("FistsEnabled", new WeaponFists(gameObject, this));
         states.Add("PitchForkEnabled", new WeaponPitchFork(gameObject, this));
+        states.Add("CarrotSpearEnabled", new WeaponCarrotSpear(gameObject, this));
         ChangeState("FistsEnabled");
     }
 
@@ -78,12 +83,25 @@ public class Attack : MonoBehaviour
         yield return new WaitForSeconds(1f / playerStats.AttackSpeed);
         currentlyAttacking = false;
     }
+    public void CarrotSpear()
+    {
+        GameObject currentCarrotSpear = (GameObject)Instantiate(carrotSpear, transform.position, transform.rotation);
+        currentCarrotSpear.GetComponent<Rigidbody>().AddForce(currentCarrotSpear.transform.forward * speedOfPitchFork);
+    }
+    public IEnumerator AttackSpeedOfCarrotSpear()
+    {
+        currentlyAttacking = true;
+        CarrotSpear();
+        yield return new WaitForSeconds(2f / playerStats.AttackSpeed);
+        currentlyAttacking = false;
+    }
 }
 public class WeaponFists : WeaponsStates
 {
     public WeaponFists(GameObject p, Attack at) { player = p; manager = at; }
     public override void EnterState()
     {
+        manager.isFists = true;
         manager.uiFists.SetActive(true);
     }
     public override void ExitState()
@@ -96,12 +114,10 @@ public class WeaponFists : WeaponsStates
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            manager.isFists = true;
             manager.isAttacking = true;
         }
         else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            manager.isFists = false;
             manager.isAttacking = false;
         }
         if (manager.isAttacking && manager.isFists)
@@ -116,6 +132,10 @@ public class WeaponFists : WeaponsStates
         {
             manager.ChangeState("PitchForkEnabled");
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            manager.ChangeState("CarrotSpearEnabled");
+        }
     }
 }
 public class WeaponPitchFork : WeaponsStates
@@ -123,6 +143,7 @@ public class WeaponPitchFork : WeaponsStates
     public WeaponPitchFork(GameObject p, Attack at) { player = p; manager = at; }
     public override void EnterState()
     {
+        manager.isPitchFork = true;
         manager.uiPitchFork.SetActive(true);
     }
     public override void ExitState()
@@ -136,14 +157,16 @@ public class WeaponPitchFork : WeaponsStates
         {
             manager.ChangeState("FistsEnabled");
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            manager.ChangeState("CarrotSpearEnabled");
+        }
         else if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            manager.isPitchFork = true;
             manager.isAttacking = true;
         }
         else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            manager.isFists = false;
             manager.isAttacking = false;
         }
         if (manager.isAttacking && manager.isPitchFork)
@@ -153,6 +176,48 @@ public class WeaponPitchFork : WeaponsStates
                 manager.StartCoroutine(manager.AttackSpeedOfPitchFork());
             }
 
+        }
+
+    }
+}
+public class WeaponCarrotSpear : WeaponsStates
+{
+    public WeaponCarrotSpear(GameObject p, Attack at) { player = p; manager = at; }
+    public override void EnterState()
+    {
+        manager.isCarrotSpear = true;
+        manager.uiCarrotSpear.SetActive(true);
+    }
+    public override void ExitState()
+    {
+        manager.uiCarrotSpear.SetActive(false) ;
+        manager.isCarrotSpear = false ;
+    }
+    public override void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            manager.ChangeState("FistsEnabled");
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            manager.isAttacking = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            manager.isAttacking = false;
+        }
+        if (manager.isAttacking && manager.isCarrotSpear)
+        {
+            if (!manager.currentlyAttacking)
+            {
+                manager.StartCoroutine(manager.AttackSpeedOfCarrotSpear());
+            }
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            manager.ChangeState("PitchForkEnabled");
         }
 
     }
