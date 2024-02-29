@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GrasslandAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 8beb0b613487b0d468ee1b0c619bd7f9, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - bc0e7d01ac16f1c4cae379e95746f1c0: -1345202258
+    - bc0e7d01ac16f1c4cae379e95746f1c0: 926204964
+    - bc0e7d01ac16f1c4cae379e95746f1c0: 1884572960
+    - 0375cef7e2c08ad409994d87368b318e: 191891753
+    - 0375cef7e2c08ad409994d87368b318e: -301993340
+    - 0375cef7e2c08ad409994d87368b318e: 561566939
+    - 0375cef7e2c08ad409994d87368b318e: -1447031678
+    - 0375cef7e2c08ad409994d87368b318e: -1515702149
+    - 0375cef7e2c08ad409994d87368b318e: 1790010159
+    - 0375cef7e2c08ad409994d87368b318e: -944995398
+    - 0375cef7e2c08ad409994d87368b318e: -658754688
+    - 0375cef7e2c08ad409994d87368b318e: 2029637664
+    - 0375cef7e2c08ad409994d87368b318e: -504854585
+    - 1069ab5aaec175341ade7d229378d1b4: 1682069882
+    - 1069ab5aaec175341ade7d229378d1b4: -382730566
+    - 1069ab5aaec175341ade7d229378d1b4: -2031542044
+    - 1069ab5aaec175341ade7d229378d1b4: -1374742437
+    - 1069ab5aaec175341ade7d229378d1b4: 2134576054
+    - 1069ab5aaec175341ade7d229378d1b4: 487107094
+    - 1069ab5aaec175341ade7d229378d1b4: 1666851788
+    - 1069ab5aaec175341ade7d229378d1b4: 748546401
+    - 1069ab5aaec175341ade7d229378d1b4: -1344819104
+    - 1069ab5aaec175341ade7d229378d1b4: 496677941
+    - 7c88afcda1822c4489ff237989686d9c: 2067576386
+    - 7c88afcda1822c4489ff237989686d9c: -1215008956
+    - 7c88afcda1822c4489ff237989686d9c: -2022420827
+    - d93043de1a178794c868568493905259: 409485192
+    - d93043de1a178794c868568493905259: 46138650
+    - d93043de1a178794c868568493905259: -139588221
+    - d93043de1a178794c868568493905259: 1383822929
+    - d93043de1a178794c868568493905259: -876243612
+    - d93043de1a178794c868568493905259: 1701992659
+    - d93043de1a178794c868568493905259: -171252572
+    - d93043de1a178794c868568493905259: 927517853
+    - d93043de1a178794c868568493905259: 1963369247
+    - dc89f23ff31149244822187572931bd8: 589893844
+    - dc89f23ff31149244822187572931bd8: 259444437
+    - dc89f23ff31149244822187572931bd8: -1791289594
+    - dc89f23ff31149244822187572931bd8: 389069616
+    - dc89f23ff31149244822187572931bd8: -150363735
+    - dc89f23ff31149244822187572931bd8: 1598145475
+    - dc89f23ff31149244822187572931bd8: 2122929384
+    - dc89f23ff31149244822187572931bd8: 1440851938
+    - dc89f23ff31149244822187572931bd8: -2003537313
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -1345202258, guid: bc0e7d01ac16f1c4cae379e95746f1c0, type: 3}
+  - {fileID: 926204964, guid: bc0e7d01ac16f1c4cae379e95746f1c0, type: 3}
+  - {fileID: 1884572960, guid: bc0e7d01ac16f1c4cae379e95746f1c0, type: 3}
+  - {fileID: 191891753, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: -301993340, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: 561566939, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: -1447031678, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: -1515702149, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: 1790010159, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: -944995398, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: -658754688, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: 2029637664, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: -504854585, guid: 0375cef7e2c08ad409994d87368b318e, type: 3}
+  - {fileID: 1682069882, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: -382730566, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: -2031542044, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: -1374742437, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: 2134576054, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: 487107094, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: 1666851788, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: 748546401, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: -1344819104, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: 496677941, guid: 1069ab5aaec175341ade7d229378d1b4, type: 3}
+  - {fileID: 2067576386, guid: 7c88afcda1822c4489ff237989686d9c, type: 3}
+  - {fileID: -1215008956, guid: 7c88afcda1822c4489ff237989686d9c, type: 3}
+  - {fileID: -2022420827, guid: 7c88afcda1822c4489ff237989686d9c, type: 3}
+  - {fileID: 409485192, guid: d93043de1a178794c868568493905259, type: 3}
+  - {fileID: 46138650, guid: d93043de1a178794c868568493905259, type: 3}
+  - {fileID: -139588221, guid: d93043de1a178794c868568493905259, type: 3}
+  - {fileID: 1383822929, guid: d93043de1a178794c868568493905259, type: 3}
+  - {fileID: -876243612, guid: d93043de1a178794c868568493905259, type: 3}
+  - {fileID: 1701992659, guid: d93043de1a178794c868568493905259, type: 3}
+  - {fileID: -171252572, guid: d93043de1a178794c868568493905259, type: 3}
+  - {fileID: 927517853, guid: d93043de1a178794c868568493905259, type: 3}
+  - {fileID: 1963369247, guid: d93043de1a178794c868568493905259, type: 3}
+  - {fileID: 589893844, guid: dc89f23ff31149244822187572931bd8, type: 3}
+  - {fileID: 259444437, guid: dc89f23ff31149244822187572931bd8, type: 3}
+  - {fileID: -1791289594, guid: dc89f23ff31149244822187572931bd8, type: 3}
+  - {fileID: 389069616, guid: dc89f23ff31149244822187572931bd8, type: 3}
+  - {fileID: -150363735, guid: dc89f23ff31149244822187572931bd8, type: 3}
+  - {fileID: 1598145475, guid: dc89f23ff31149244822187572931bd8, type: 3}
+  - {fileID: 2122929384, guid: dc89f23ff31149244822187572931bd8, type: 3}
+  - {fileID: 1440851938, guid: dc89f23ff31149244822187572931bd8, type: 3}
+  - {fileID: -2003537313, guid: dc89f23ff31149244822187572931bd8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - ExtraGrass_2
+  - ExtraGrass_0
+  - ExtraGrass_1
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_4
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_5
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_6
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_7
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_0
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_1
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_2
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_3
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_8
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (1)_9
+  - Grassy Tileset_9
+  - Grassy Tileset_8
+  - Grassy Tileset_5
+  - Grassy Tileset_4
+  - Grassy Tileset_7
+  - Grassy Tileset_6
+  - Grassy Tileset_1
+  - Grassy Tileset_0
+  - Grassy Tileset_3
+  - Grassy Tileset_2
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (4)_2
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (4)_1
+  - grass-flowers-pixel-art-sprouts-260nw-2117977970 (4)_0
+  - irradiateddirt_8
+  - irradiateddirt_2
+  - irradiateddirt_3
+  - irradiateddirt_0
+  - irradiateddirt_1
+  - irradiateddirt_6
+  - irradiateddirt_7
+  - irradiateddirt_4
+  - irradiateddirt_5
+  - IrradiatedGrass_7
+  - IrradiatedGrass_6
+  - IrradiatedGrass_5
+  - IrradiatedGrass_4
+  - IrradiatedGrass_3
+  - IrradiatedGrass_2
+  - IrradiatedGrass_1
+  - IrradiatedGrass_0
+  - IrradiatedGrass_8
+  m_RenderDataMap: {}
+  m_Tag: GrasslandAtlas
+  m_IsVariant: 0
