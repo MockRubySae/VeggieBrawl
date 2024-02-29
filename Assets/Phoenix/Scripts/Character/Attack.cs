@@ -112,6 +112,15 @@ public class WeaponFists : WeaponsStates
     }
     public override void Update()
     {
+        
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            manager.ChangeState("PitchForkEnabled");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            manager.ChangeState("CarrotSpearEnabled");
+        }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             manager.isAttacking = true;
@@ -126,16 +135,8 @@ public class WeaponFists : WeaponsStates
             {
                 manager.StartCoroutine(manager.AttackSpeedOfFists());
             }
-
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            manager.ChangeState("PitchForkEnabled");
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            manager.ChangeState("CarrotSpearEnabled");
-        }
+       
     }
 }
 public class WeaponPitchFork : WeaponsStates
@@ -199,6 +200,10 @@ public class WeaponCarrotSpear : WeaponsStates
         {
             manager.ChangeState("FistsEnabled");
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            manager.ChangeState("PitchForkEnabled");
+        }
         else if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             manager.isAttacking = true;
@@ -215,10 +220,6 @@ public class WeaponCarrotSpear : WeaponsStates
             }
 
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            manager.ChangeState("PitchForkEnabled");
-        }
-
+       
     }
 }
