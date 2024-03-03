@@ -24,8 +24,8 @@ public class GarlicEnemy : MonoBehaviour
     {
         // give rigid body
         rb = GetComponent<Rigidbody>();
-        playerPos = GameObject.Find("Player").transform;
-        stats = GameObject.Find("Player").GetComponent<PlayerStats>();
+        playerPos = GameObject.Find("playerNormal").transform;
+        stats = GameObject.Find("playerNormal").GetComponent<PlayerStats>();
         spriteAnimComp = GetComponent<Animator>();
         garlicDrop = GameObject.Find("GarlicDrop");
 

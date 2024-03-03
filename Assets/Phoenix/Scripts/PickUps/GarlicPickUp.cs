@@ -20,9 +20,9 @@ public class GarlicPickUp : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         garlic = GameObject.Find("Canvas").GetComponent<GarlicFillAmount>();
-        player = GameObject.Find("Player").GetComponent<Movement>();
+        player = GameObject.Find("playerNormal").GetComponent<Movement>();
         pressE = gameObject.transform.GetChild(0).gameObject;
-        playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
+        playerStats = GameObject.Find("playerNormal").GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class GarlicPickUp : MonoBehaviour
         if(Input.GetKey(KeyCode.E))
         {
             StartCoroutine(Eating());
-            Debug.Log("isEaing");
+            Debug.Log("isEating");
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -57,7 +57,7 @@ public class GarlicPickUp : MonoBehaviour
         player.speed = 10f;
         playerStats.health = playerStats.health + 10;
         Destroy(gameObject);
-        Debug.Log("finished eatingt");
+        Debug.Log("finished eating");
     }
 
 }

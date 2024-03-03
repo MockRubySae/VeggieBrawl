@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -19,6 +21,9 @@ public class Movement : MonoBehaviour
     public bool isWalking = false;
     public bool isSprinting = false;
     public bool isToggleSprint = false;
+
+    public Animator playerAnimator;
+    public AttackAnimManager animManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +46,6 @@ public class Movement : MonoBehaviour
         {
             SprintToggle();
         }
-        Dust();
         Walking();
         // get the axis for horzontal movement
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -54,6 +58,25 @@ public class Movement : MonoBehaviour
         // also make the speed not dependent on frame rate
         // move the possition of the player
         transform.position += movedirection * speed * Time.deltaTime;
+
+        if (animManager.isAttackFinished)
+        {
+            if (isWalking)
+            {
+                if ((Input.GetKeyDown(KeyCode.LeftShift)) || (Input.GetKey(KeyCode.LeftShift)))
+                {
+                    playerAnimator.Play("player_sprint");
+                }
+                else
+                {
+                    playerAnimator.Play("player_walk");
+                }
+            }
+            else
+            {
+                playerAnimator.Play("player_idle");
+            }
+        }
     }
     void SprintToggle()
     {
@@ -91,20 +114,17 @@ public class Movement : MonoBehaviour
         }
 
     }
-    void Dust()
+    void Dust() //called in keyframe as event
     {
-        // check if the player is moving
-        if (isWalking == true || isSprinting == true)
-        {
-            // play dust particle
-            dust.Play();
-        }
-        else if (isSprinting == false && isWalking == false)
-        {
-            // if the player is not moving dont play the dust particle
-            dust.Stop();
-        }
+        StartCoroutine(DustCycle());
     }
+    private IEnumerator DustCycle()
+    {
+        dust.Play();
+        yield return new WaitForSeconds(0.5f);
+        dust.Stop();
+    }
+
     void Walking()
     {
         if (horizontalInput != 0 || verticalInput != 0 )
@@ -113,11 +133,10 @@ public class Movement : MonoBehaviour
             {
                 isWalking = true;
             }
-            
         }
         else if (horizontalInput == 0 || verticalInput == 0 || speed == 0)
         {
-           isWalking = false;
+            isWalking = false;
         }
     }
 }

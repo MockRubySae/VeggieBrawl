@@ -8,7 +8,7 @@ public class CarrotSpear : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<PlayerStats>();
+        player = GameObject.Find("playerNormal").GetComponent<PlayerStats>();
         StartCoroutine(DestroyAfter());
     }
 
