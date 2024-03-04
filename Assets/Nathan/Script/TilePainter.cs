@@ -10,10 +10,13 @@ public class TilePainter : MonoBehaviour
     public Vector3Int position;
     public int choose;
     public Tile paint;
+    public int map;
 
     public Tile farmlandTopLeft, farmlandTopRight, farmlandBottomLeft, farmlandBottomRight, farmlandMiddle, farmlandLeft, farmlandRight, farmlandTop, farmlandBottom;
     void Start()
     {
+
+
         for (int x = -250; x < 250; x++)
         {
             for (int y = -250; y < 250; y++)
