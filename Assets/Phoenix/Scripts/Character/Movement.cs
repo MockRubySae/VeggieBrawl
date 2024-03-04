@@ -1,14 +1,11 @@
 using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
     public ParticleSystem dust;
     // set the speed to 10
-    private float speed = 10.0f;
+    public float speed = 10.0f;
     // add horziontal input for basic controls
     private float horizontalInput;
     // do the same but for vertical movement
@@ -19,6 +16,9 @@ public class Movement : MonoBehaviour
     public GameObject player;
     // add rigid body 
     Rigidbody rb;
+    public bool isWalking = false;
+    public bool isSprinting = false;
+    public bool isToggleSprint = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,18 +33,16 @@ public class Movement : MonoBehaviour
     void Update()
     {
         // check if player is sprinting
-        Sprint();
-        // check if the player is moving
-        if (horizontalInput != 0 || verticalInput != 0)
+        if (!isToggleSprint)
         {
-            // play dust particle
-            dust.Play();
+            Sprint();
         }
-        else
+        else if (isToggleSprint)
         {
-            // if the player is not moving dont play the dust particle
-            dust.Stop();
+            SprintToggle();
         }
+        Dust();
+        Walking();
         // get the axis for horzontal movement
         horizontalInput = Input.GetAxisRaw("Horizontal");
         // get the axis for vertical
@@ -57,20 +55,69 @@ public class Movement : MonoBehaviour
         // move the possition of the player
         transform.position += movedirection * speed * Time.deltaTime;
     }
-    void Sprint()
+    void SprintToggle()
     {
         // get the imput of shift
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKeyDown(KeyCode.LeftShift) && speed != 0 && isSprinting == false)
         {
             // make speed 1.5 times bigger
             speed = 15f;
+            isSprinting = true;
         }
         // when the shift key is not pressed return speed to normal
-        else
+        else if(Input.GetKeyDown(KeyCode.LeftShift) && speed != 0 && isSprinting == true)
         {
             // set speed to normal
             speed = 10f;
+            isSprinting = false;
         }
         
+    }
+    void Sprint()
+    {
+        // get the imput of shift
+        if (Input.GetKey(KeyCode.LeftShift) && speed != 0 && isSprinting == false)
+        {
+            // make speed 1.5 times bigger
+            speed = 15f;
+            isSprinting = true;
+        }
+        // when the shift key is not pressed return speed to normal
+        else if (speed != 0)
+        {
+            // set speed to normal
+            speed = 10f;
+            isSprinting = false;
+        }
+
+    }
+    void Dust()
+    {
+        // check if the player is moving
+        if (isWalking == true || isSprinting == true)
+        {
+            // play dust particle
+            dust.Play();
+        }
+        else if (isSprinting == false && isWalking == false)
+        {
+            // if the player is not moving dont play the dust particle
+            dust.Stop();
+        }
+    }
+    void Walking()
+    {
+        if (horizontalInput != 0 || verticalInput != 0 )
+        {
+            if(isSprinting == false && speed != 0)
+            {
+                isWalking = true;
+            }
+            
+        }
+        else if (horizontalInput == 0 || verticalInput == 0 || speed == 0)
+        {
+           isWalking = false;
+        }
     }
 }
