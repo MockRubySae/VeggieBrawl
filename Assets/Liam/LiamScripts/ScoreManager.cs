@@ -15,6 +15,7 @@ public class ScoreManager : MonoBehaviour
 
     private float nextScoreTime = 0.0f;
     public float period = 1f;
+    public float gameTime;
 
     private void Awake()
     {
@@ -32,27 +33,28 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameTime = gameTime + Time.deltaTime;
         scoreText.text = "Score: " + score.ToString();
-        if (Time.time > nextScoreTime)
+        if (gameTime > nextScoreTime)
         {
             nextScoreTime += period;
-            if (Time.time < 60)
+            if (gameTime < 60)
             {
                 score += 10;
             }
-            else if (Time.time > 60 && Time.time < 120)
+            else if (gameTime > 60 && gameTime < 120)
             {
                 score += 30;
             }
-            else if (Time.time > 120 && Time.time < 180)
+            else if (gameTime > 120 && gameTime < 180)
             {
                 score += 50;
             }
-            else if (Time.time > 180 && Time.time < 240)
+            else if (gameTime > 180 && gameTime < 240)
             {
                 score += 70;
             }
-            else if (Time.time > 300)
+            else if (gameTime > 300)
             {
                 score += 100;
             }
@@ -71,5 +73,11 @@ public class ScoreManager : MonoBehaviour
     public void ScoreReset()
     {
         score = 0;
+    }
+
+    public void HighscoreReset()
+    {
+        PlayerPrefs.SetInt("highscore", 0);
+        highscoreText.text = "Highscore: " + 0;
     }
 }
