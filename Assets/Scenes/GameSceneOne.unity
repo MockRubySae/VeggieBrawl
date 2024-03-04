@@ -412,6 +412,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 778357657}
   highscoreText: {fileID: 577403832}
+  score: 0
+  bossKills: 0
   period: 1
 --- !u!114 &34156121
 MonoBehaviour:
@@ -842,6 +844,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   garlicEnemy: {fileID: 7802110312025191858, guid: 825d49beb75365f4faee3655d4d23b43, type: 3}
+  pumpkinEnemy: {fileID: 1976616053230707840, guid: 1523d2a4ec37cfa40a844f7ea4602e8a, type: 3}
+  pumpkinBoss: {fileID: -6755853062883643846, guid: 7388785debe4b8049be3219899e11238, type: 3}
+  scoreManager: {fileID: 34156120}
 --- !u!1 &209772949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,68 +1803,6 @@ MonoBehaviour:
     - {x: 0, y: 0, z: 0, w: 0}
     - {x: 0, y: 0, z: 0, w: 0}
   m_Flip: 1
---- !u!1 &460270642
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 460270643}
-  - component: {fileID: 460270644}
-  m_Layer: 0
-  m_Name: WeaponSpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &460270643
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 460270642}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16999996, y: 1.009, z: 2.03}
-  m_LocalScale: {x: 1, y: 1, z: 1.1507}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1331941258}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &460270644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 460270642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9748004760f871f48b629b52ce0955f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fists: {fileID: 7326570723416107376, guid: 30142e924ce15044d80427966b4d9280, type: 3}
-  uiFists: {fileID: 171606154}
-  pitchFork: {fileID: 8953899379537017334, guid: 036cf224b01a4334aac4fd7f2726949d, type: 3}
-  uiPitchFork: {fileID: 504363742}
-  carrotSpear: {fileID: 8660883942882892911, guid: 31e654e4314104943868ff798f881f1f, type: 3}
-  uiCarrotSpear: {fileID: 1928134530}
-  playerHoe: {fileID: 432118465}
-  playerSpear: {fileID: 1396658454}
-  speedOfFists: 1500
-  speedOfPitchFork: 1500
-  speedOfCarrotSpear: 6000
-  playerStats: {fileID: 1453655679}
-  isAttacking: 0
-  isFists: 0
-  isPitchFork: 0
-  isCarrotSpear: 0
-  currentlyAttacking: 0
-  stateName: 
 --- !u!1 &485225014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,6 +1900,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   garlicEnemy: {fileID: 7802110312025191858, guid: 825d49beb75365f4faee3655d4d23b43, type: 3}
+  pumpkinEnemy: {fileID: 1976616053230707840, guid: 1523d2a4ec37cfa40a844f7ea4602e8a, type: 3}
+  pumpkinBoss: {fileID: -6755853062883643846, guid: 7388785debe4b8049be3219899e11238, type: 3}
+  scoreManager: {fileID: 34156120}
 --- !u!1 &504363742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2739,7 +2685,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666044513}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.7736166, w: -0.63365406}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7736166, w: -0.633654}
   m_LocalPosition: {x: 0.338, y: -0.005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3352,6 +3298,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   garlicEnemy: {fileID: 7802110312025191858, guid: 825d49beb75365f4faee3655d4d23b43, type: 3}
+  pumpkinEnemy: {fileID: 1976616053230707840, guid: 1523d2a4ec37cfa40a844f7ea4602e8a, type: 3}
+  pumpkinBoss: {fileID: -6755853062883643846, guid: 7388785debe4b8049be3219899e11238, type: 3}
+  scoreManager: {fileID: 34156120}
 --- !u!1 &949933176 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7641999040430872125, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
@@ -3947,6 +3896,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   garlicEnemy: {fileID: 7802110312025191858, guid: 825d49beb75365f4faee3655d4d23b43, type: 3}
+  pumpkinEnemy: {fileID: 1976616053230707840, guid: 1523d2a4ec37cfa40a844f7ea4602e8a, type: 3}
+  pumpkinBoss: {fileID: -6755853062883643846, guid: 7388785debe4b8049be3219899e11238, type: 3}
+  scoreManager: {fileID: 34156120}
 --- !u!1 &1072915321
 GameObject:
   m_ObjectHideFlags: 0
@@ -4008,7 +3960,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cb64b26d01db85d4b981542478a9101d, type: 2}
+  - {fileID: 2100000, guid: f250c70580d45b542b91800946d8f974, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4048,7 +4000,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.4218, y: 1.4586096, z: -2.4429}
-  m_LocalScale: {x: 76639, y: 1, z: 92135}
+  m_LocalScale: {x: 750000, y: 1, z: 750000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4831,7 +4783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163176806}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.7801388, w: -0.62560654}
+  m_LocalRotation: {x: -0, y: -0, z: -0.78013784, w: -0.6256077}
   m_LocalPosition: {x: 0.316, y: 0.003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4927,7 +4879,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250660869}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.613113, w: -0.7899952}
+  m_LocalRotation: {x: -0, y: -0, z: -0.61311406, w: -0.7899945}
   m_LocalPosition: {x: 0.224, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5217,13 +5169,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: playerNormal
       objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: -7642866620449750848, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9709621
+      value: 0.9709625
       objectReference: {fileID: 0}
     - target: {fileID: -7642866620449750848, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.2392336
+      value: 0.23923185
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5231,7 +5187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.466
+      value: 1.53
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5267,11 +5223,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5683014164190385506, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9963379
+      value: 0.9963381
       objectReference: {fileID: 0}
     - target: {fileID: -5683014164190385506, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.08550379
+      value: -0.085501395
       objectReference: {fileID: 0}
     - target: {fileID: -4277572028345806657, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5287,7 +5243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2764519864323937747, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.053376492
+      value: 0.053376496
       objectReference: {fileID: 0}
     - target: {fileID: -2764519864323937747, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.y
@@ -5303,7 +5259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2048058942279982198, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.09926439
+      value: 0.09926384
       objectReference: {fileID: 0}
     - target: {fileID: -2048058942279982198, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.y
@@ -5311,7 +5267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2048058942279982198, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.9950611
+      value: 0.99506116
       objectReference: {fileID: 0}
     - target: {fileID: -2048058942279982198, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -5327,7 +5283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1152166667440710827, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.04345015
+      value: 0.04345109
       objectReference: {fileID: 0}
     - target: {fileID: 1152166667440710827, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.y
@@ -5335,7 +5291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1152166667440710827, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.9990556
+      value: 0.99905556
       objectReference: {fileID: 0}
     - target: {fileID: 1374661659427941845, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_IsActive
@@ -5355,11 +5311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5250396463364326496, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.06526518
+      value: -0.06526522
       objectReference: {fileID: 0}
     - target: {fileID: 6701517277895392440, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.14800759
+      value: 0.14800762
       objectReference: {fileID: 0}
     - target: {fileID: 6701517277895392440, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       propertyPath: m_LocalRotation.y
@@ -5383,9 +5339,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 160847690}
-    - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 460270643}
     - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1993670931}
@@ -5429,6 +5382,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1453655684}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1453655685}
     - targetCorrespondingSourceObject: {fileID: 4445930243089806264, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1331941262}
@@ -5845,7 +5801,7 @@ MonoBehaviour:
   isSprinting: 0
   isToggleSprint: 0
   playerAnimator: {fileID: 1453655674}
-  animManager: {fileID: 1453655684}
+  attackManager: {fileID: 1453655684}
 --- !u!135 &1453655682
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5897,12 +5853,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1083143742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90cc52ad6e543e54a959bef765f451a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9748004760f871f48b629b52ce0955f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacksManager: {fileID: 460270644}
-  playerAnimator: {fileID: 1453655674}
-  isAttackFinished: 1
+  fists: {fileID: 7326570723416107376, guid: 30142e924ce15044d80427966b4d9280, type: 3}
+  uiFists: {fileID: 171606154}
+  pitchFork: {fileID: 8953899379537017334, guid: 036cf224b01a4334aac4fd7f2726949d, type: 3}
+  uiPitchFork: {fileID: 504363742}
+  carrotSpear: {fileID: 8660883942882892911, guid: 31e654e4314104943868ff798f881f1f, type: 3}
+  uiCarrotSpear: {fileID: 1928134530}
+  playerHoe: {fileID: 432118465}
+  playerSpear: {fileID: 1396658454}
+  speedOfFists: 1500
+  speedOfPitchFork: 1500
+  speedOfCarrotSpear: 6000
+  playerStats: {fileID: 1453655679}
+  isAttacking: 0
+  isFists: 0
+  isPitchFork: 0
+  isCarrotSpear: 0
+  currentlyAttacking: 0
+  stateName: 
+--- !u!114 &1453655685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083143742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad326257f993fa4fb3f3d63d8a1646c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pumpkinCrawlerBoss: {fileID: 1976616053230707840, guid: 7388785debe4b8049be3219899e11238, type: 3}
 --- !u!1001 &1474625383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6151,7 +6135,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 988e70452b4919f4e8bec254589ffe02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 612db3a768bcbe94db399f9739ab7260, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6301,7 +6285,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 82154de199fbdd8499126636fe451373, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 770eec2a73e15e54db469edb35bcc39d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

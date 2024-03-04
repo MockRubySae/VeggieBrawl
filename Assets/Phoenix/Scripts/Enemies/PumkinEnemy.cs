@@ -9,13 +9,13 @@ public class PumkinEnemy : MonoBehaviour
     public PlayerStats stats;
     // make a refreance to the players posision 
     public Transform playerPos;
-    public float health = 2;
+    public float health = 4;
     bool isAttacking = false;
     public bool isDead = false;
     // rigidbody refreance
     Rigidbody rb;
     // make speed half of player
-    float speed = 5.0f;
+    float speed = 3.0f;
     // Start is called before the first frame update
     private Animator spriteAnimComp;
 
@@ -23,8 +23,8 @@ public class PumkinEnemy : MonoBehaviour
     {
         // give rigid body
         rb = GetComponent<Rigidbody>();
-        playerPos = GameObject.Find("Player").transform;
-        stats = GameObject.Find("Player").GetComponent<PlayerStats>();
+        playerPos = GameObject.Find("playerNormal").transform;
+        stats = GameObject.Find("playerNormal").GetComponent<PlayerStats>();
      //   spriteAnimComp = GetComponent<Animator>();
 
     }
@@ -45,7 +45,7 @@ public class PumkinEnemy : MonoBehaviour
         if(health <= 0)
         {
             isDead = true;
-            spriteAnimComp.Play("garlicSpider_death");
+            spriteAnimComp.Play("pumpkinCrawler_die");
             StartCoroutine(DestroyEntity());
         }
     }
@@ -62,11 +62,11 @@ public class PumkinEnemy : MonoBehaviour
     }
     IEnumerator Wait()
     {
-    //    spriteAnimComp.Play("garlicSpider_attack");
+        spriteAnimComp.Play("pumpkinCrawler_attack");
         yield return new WaitForSeconds(1f);
         speed = 5f;
         isAttacking = false;
-     //   spriteAnimComp.Play("garlicSpider_move");
+        spriteAnimComp.Play("pumpkinCrawler_move");
     }
 
     void CallDestroy()

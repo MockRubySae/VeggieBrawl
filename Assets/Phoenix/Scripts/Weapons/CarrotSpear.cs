@@ -24,9 +24,19 @@ public class CarrotSpear : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.TryGetComponent<GarlicEnemy>(out GarlicEnemy enemy))
+        if (collision.gameObject.TryGetComponent<GarlicEnemy>(out GarlicEnemy garlicMob))
         {
-            enemy.health = enemy.health - 4 * player.strength;
+            garlicMob.health = garlicMob.health - player.strength;
+        }
+        else if (collision.gameObject.TryGetComponent<PumpkinEnemy>(out PumpkinEnemy pumpkinMob))
+        {
+            pumpkinMob.health = pumpkinMob.health - player.strength;
+        }
+        else if (collision.gameObject.TryGetComponent<PumpkinBoss>(out PumpkinBoss pumpkinBossMob))
+        {
+            Debug.Log("Boss hit!");
+            pumpkinBossMob.health = pumpkinBossMob.health - player.strength;
+            Debug.Log(pumpkinBossMob.health);
         }
     }
 }

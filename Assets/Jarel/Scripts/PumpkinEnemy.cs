@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro.Examples;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PumpkinEnemy : MonoBehaviour
@@ -10,21 +11,24 @@ public class PumpkinEnemy : MonoBehaviour
     public Transform playerPos;
     public float health = 4;
     bool isAttacking = false;
+    public bool isDead = false;
     // rigidbody refreance
-    Rigidbody pumpkinRb;
+    Rigidbody rb;
     // make speed half of player
-    float speed = 10.0f;
+    float speed = 3.0f;
     // Start is called before the first frame update
-
     private Animator spriteAnimComp;
+
+    public GameObject seed;
+    public float speedOfSeed = 500f;
+    private bool inRange = false;
 
     void Start()
     {
         // give rigid body
-        pumpkinRb = GetComponent<Rigidbody>();
-        playerPos = GameObject.Find("Player").transform;
-        stats = GameObject.Find("Player").GetComponent<PlayerStats>();
-
+        rb = GetComponent<Rigidbody>();
+        playerPos = GameObject.Find("playerNormal").transform;
+        stats = GameObject.Find("playerNormal").GetComponent<PlayerStats>();
         spriteAnimComp = GetComponent<Animator>();
 
     }
@@ -32,37 +36,88 @@ public class PumpkinEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // make the enemy look  at camera while standing
-        transform.LookAt(Camera.main.transform, Vector3.up);
-        // make varible to move the enemy times by deltatime so that it does not change with frame rate
-        var crawl = speed * Time.deltaTime;
-        // move from current position to the position of the player
-        transform.position = Vector3.MoveTowards(transform.position, playerPos.transform.position, crawl);
-        Debug.Log(crawl);
+        if (!isDead)
+        {
+            // make the enemy look  at camera while standing
+            transform.LookAt(Camera.main.transform, Vector3.up);
+            // make varible to move the enemy times by deltatime so that it does not change with frame rate
+            var step = speed * Time.deltaTime;
+            // move from current position to the position of the player
+            transform.position = Vector3.MoveTowards(transform.position, playerPos.transform.position, step);
+        }
+
         if (health <= 0)
         {
-            spriteAnimComp.Play("pumpkinCrawler_death");
+            isDead = true;
+            spriteAnimComp.Play("pumpkinCrawler_die");
+            StartCoroutine(DestroyEntity());
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
-        if (!isAttacking)
+        if (!isAttacking && health > 0)
         {
             stats.health = stats.health - 1;
             isAttacking = true;
             speed = 0f;
             StartCoroutine(Wait());
         }
-    }
-    IEnumerator Wait()
+    }*/
+
+    private void OnTriggerEnter(Collider other)
     {
-        spriteAnimComp.Play("pumpkinCrawler_attack");
+        if (!isDead)
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("Default"))
+            {
+                // Trigger the attack behavior here when the player enters the trigger zone
+                inRange = true;
+                Debug.Log("Player detected, triggering attack behavior!");
+                if (!isAttacking && health > 0)
+                {
+                    isAttacking = true;
+                    speed = 0f;
+                    spriteAnimComp.Play("pumpkinCrawler_attack");
+                    //StartCoroutine(Wait());
+                }
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!isDead)
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("Default"))
+            {
+                inRange = false;
+            }
+        }
+    }
+
+    void ContinueAttack()
+    {
+        if (inRange)
+        {
+            spriteAnimComp.Play("pumpkinCrawler_attack");
+        }
+        else
+        {
+            isAttacking = false;
+            speed = 3f;
+            spriteAnimComp.Play("pumpkinCrawler_move");
+        }
+    }
+
+    /*IEnumerator Wait()
+    {
+        
         yield return new WaitForSeconds(1f);
         speed = 5f;
         isAttacking = false;
         spriteAnimComp.Play("pumpkinCrawler_move");
-    }
+    }*/
 
     void CallDestroy()
     {
@@ -71,7 +126,19 @@ public class PumpkinEnemy : MonoBehaviour
 
     IEnumerator DestroyEntity()
     {
+        //   int changeToDrop = Random.Range(0, 10);
+        //   if (changeToDrop >= 8)
+        //   {
+        //        Instantiate(garlicDrop, transform.position, transform.rotation);
+        //   }
+        ScoreManager.instance.EnemyAddPoint(200);
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
+    }
+    public void PumpkinShoot()
+    {
+        GameObject pumpkinSeed = (GameObject)Instantiate(seed, transform.position, transform.rotation);
+        Vector3 directionToPlayer = (playerPos.transform.position - transform.position).normalized;
+        pumpkinSeed.GetComponent<Rigidbody>().AddForce(pumpkinSeed.transform.forward * speedOfSeed);
     }
 }

@@ -301,9 +301,10 @@ GameObject:
   m_Component:
   - component: {fileID: 839428780344605923}
   - component: {fileID: 2735389112317853315}
+  - component: {fileID: 554399480429342853}
   - component: {fileID: 3760014874396127676}
-  - component: {fileID: 6833416289419975450}
   - component: {fileID: -2647985368138848585}
+  - component: {fileID: 8832122166339209851}
   m_Layer: 6
   m_Name: pumpkinCrawler
   m_TagString: Untagged
@@ -364,7 +365,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!135 &3760014874396127676
+--- !u!135 &554399480429342853
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -385,22 +386,27 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1.8
   m_Center: {x: 0.1, y: 1.8, z: 0}
---- !u!114 &6833416289419975450
-MonoBehaviour:
+--- !u!135 &3760014874396127676
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976616053230707840}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fd49da9be2e67c49a137a4ef5d71ff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats: {fileID: 0}
-  playerPos: {fileID: 0}
-  health: 2
-  isDead: 0
+  serializedVersion: 3
+  m_Radius: 8
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &-2647985368138848585
 Animator:
   serializedVersion: 5
@@ -414,7 +420,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: b80acf4d17d7429428e4105b213b463d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -422,6 +428,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8832122166339209851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976616053230707840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2aac473f08ffc44a33db67b18bbe2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 0}
+  playerPos: {fileID: 0}
+  health: 4
+  isDead: 0
+  seed: {fileID: 1507637375094315641, guid: 6d63e6ed46f807a488cdf0cfdf9404ec, type: 3}
+  speedOfSeed: 1500
 --- !u!1 &2124994822486715424
 GameObject:
   m_ObjectHideFlags: 0

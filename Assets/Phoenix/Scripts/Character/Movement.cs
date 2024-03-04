@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
     public bool isToggleSprint = false;
 
     public Animator playerAnimator;
-    public AttackAnimManager animManager;
+    public Attack attackManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +59,7 @@ public class Movement : MonoBehaviour
         // move the possition of the player
         transform.position += movedirection * speed * Time.deltaTime;
 
-        if (animManager.isAttackFinished)
+        if (attackManager.currentlyAttacking)
         {
             if (isWalking)
             {

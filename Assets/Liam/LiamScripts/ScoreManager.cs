@@ -10,8 +10,10 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highscoreText;
 
-    int score = 0;
+    public int score = 0;
     int highscore = 0;
+
+    public int bossKills = 0;
 
     private float nextScoreTime = 0.0f;
     public float period = 1f;

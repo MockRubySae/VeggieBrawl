@@ -10,7 +10,7 @@ public class AttackAnimManager : MonoBehaviour
     public Animator playerAnimator;
 
     public bool isAttackFinished = true;
-    private int activeLimb = 0; //for fists; 0 - right; 1 - left
+    //private int activeLimb = 0; //for fists; 0 - right; 1 - left
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,7 @@ public class AttackAnimManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (isAttackFinished)
@@ -47,6 +48,7 @@ public class AttackAnimManager : MonoBehaviour
                 }
             }
         }
+        */
     }
 
     void AttackEnd() //keyframe event

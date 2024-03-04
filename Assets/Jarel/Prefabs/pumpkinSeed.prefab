@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7961179094560481040}
   - component: {fileID: 2082098561065070220}
   - component: {fileID: 3402730266543199310}
+  - component: {fileID: 7037827470275711327}
   m_Layer: 6
   m_Name: pumpkinSeed
   m_TagString: Untagged
@@ -108,10 +109,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!136 &3402730266543199310
 CapsuleCollider:
@@ -136,3 +137,16 @@ CapsuleCollider:
   m_Height: 0.65
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7037827470275711327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507637375094315641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e4d3ec15e03bf4d8a37eb33e961be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}

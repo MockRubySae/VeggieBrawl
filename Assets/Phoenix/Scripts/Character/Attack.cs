@@ -29,13 +29,14 @@ public class Attack : MonoBehaviour
     public bool isFists = false;
     public bool isPitchFork = false;
     public bool isCarrotSpear = false;
-    public bool currentlyAttacking = false;
+    public bool currentlyAttacking = true;
     Dictionary<string, WeaponsStates> states = new Dictionary<string, WeaponsStates>();
     WeaponsStates currentState = null;
     public string stateName = "";
     // Start is called before the first frame update
     void Start()
     {
+        currentlyAttacking = true;
         states.Add("FistsEnabled", new WeaponFists(gameObject, this));
         states.Add("PitchForkEnabled", new WeaponPitchFork(gameObject, this));
         states.Add("CarrotSpearEnabled", new WeaponCarrotSpear(gameObject, this));
@@ -97,9 +98,15 @@ public class Attack : MonoBehaviour
         yield return new WaitForSeconds(2f / playerStats.AttackSpeed);
         currentlyAttacking = false;
     }*/
+    void AttackEnd() //keyframe event
+    {
+        currentlyAttacking = true;
+        Debug.Log("Attack has ended");
+    }
 }
 public class WeaponFists : WeaponsStates
 {
+    int activeLimb = 0;
     public WeaponFists(GameObject p, Attack at) { player = p; manager = at; }
     public override void EnterState()
     {
@@ -114,7 +121,6 @@ public class WeaponFists : WeaponsStates
     }
     public override void Update()
     {
-        
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             manager.ChangeState("PitchForkEnabled");
@@ -123,23 +129,40 @@ public class WeaponFists : WeaponsStates
         {
             manager.ChangeState("CarrotSpearEnabled");
         }
-        /*if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            manager.isAttacking = true;
-        }
-        else if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            manager.isAttacking = false;
-        }
-        if (manager.isAttacking && manager.isFists)
-        {
-            if (!manager.currentlyAttacking)
+            if (manager.currentlyAttacking)
             {
-                manager.StartCoroutine(manager.AttackSpeedOfFists());
+                manager.currentlyAttacking = false;
+                if (activeLimb == 0)
+                {
+                    player.GetComponent<Animator>().Play("player_attackFistRight");
+                    activeLimb = 1;
+                }
+                else if (activeLimb == 1)
+                {
+                    player.GetComponent<Animator>().Play("player_attackFistLeft");
+                    activeLimb = 0;
+                }
             }
-        }*/
-       
-    }
+        }
+                /*if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    manager.isAttacking = true;
+                }
+                else if (Input.GetKeyUp(KeyCode.Mouse0))
+                {
+                    manager.isAttacking = false;
+                }
+                if (manager.isAttacking && manager.isFists)
+                {
+                    if (!manager.currentlyAttacking)
+                    {
+                        manager.StartCoroutine(manager.AttackSpeedOfFists());
+                    }
+                }*/
+
+            }
 }
 public class WeaponPitchFork : WeaponsStates
 {
@@ -165,6 +188,14 @@ public class WeaponPitchFork : WeaponsStates
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             manager.ChangeState("CarrotSpearEnabled");
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (manager.currentlyAttacking)
+            {
+                manager.currentlyAttacking = false;
+                player.GetComponent<Animator>().Play("player_attackHoe");
+            }
         }
         /*else if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -210,6 +241,14 @@ public class WeaponCarrotSpear : WeaponsStates
         {
             manager.ChangeState("PitchForkEnabled");
         }
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (manager.currentlyAttacking)
+            {
+                manager.currentlyAttacking = false;
+                player.GetComponent<Animator>().Play("player_attackSpear");
+            }
+        }
         /*else if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             manager.isAttacking = true;
@@ -226,6 +265,6 @@ public class WeaponCarrotSpear : WeaponsStates
             }
 
         }*/
-       
+
     }
 }
