@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5172093919951166441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3576912009288097708}
+  - component: {fileID: 1910876712291890772}
+  m_Layer: 0
+  m_Name: TilePainter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3576912009288097708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5172093919951166441}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -33.897564, y: 22.522835, z: 116.85459}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1910876712291890772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5172093919951166441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80509931b8e20da4994556106ebb9a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grass1: {fileID: 11400000, guid: 5df08a6e09bf4cb4fb03fab55689ab46, type: 2}
+  grass2: {fileID: 11400000, guid: e9266694564f8e843a4b7aa603eb0acf, type: 2}
+  grass3: {fileID: 11400000, guid: 036091c6427065b498c44d65a04380c6, type: 2}
+  grass4: {fileID: 11400000, guid: fd1a550301466644cb83bc3f362683f3, type: 2}
+  irrGrass1: {fileID: 11400000, guid: 7b319a3b98279dd4992a24ce6c31fd72, type: 2}
+  irrGrass2: {fileID: 11400000, guid: 4dd60c4cfbef3074295768b20894e97b, type: 2}
+  irrGrass3: {fileID: 11400000, guid: 85231386d45bad14a927f7097f7b1fa6, type: 2}
+  irrGrass4: {fileID: 11400000, guid: 0a651f864b49dc34b840ed2e934c2a16, type: 2}
+  tilemap: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
+  choose: 0
+  paint: {fileID: 0}
+  map: 0
+  farmlandTopLeft: {fileID: 11400000, guid: 6554bff7c754acb48882a31700c8bc1f, type: 2}
+  farmlandTopRight: {fileID: 11400000, guid: b387ecd4947bfe34d87c091432c03513, type: 2}
+  farmlandBottomLeft: {fileID: 11400000, guid: aed7a3d9c5ce918469805193885d9933, type: 2}
+  farmlandBottomRight: {fileID: 11400000, guid: 1ca61e2e4ba774443bacf31b5aca2490, type: 2}
+  farmlandMiddle: {fileID: 11400000, guid: 7523376154d699141b30a8ce84d34a1c, type: 2}
+  farmlandLeft: {fileID: 11400000, guid: b099c3d061eedb84d8461569ddf362ed, type: 2}
+  farmlandRight: {fileID: 11400000, guid: e9c42b5db4f8d3f459f62fce39ca240b, type: 2}
+  farmlandTop: {fileID: 11400000, guid: 01d9ca54b8f3f804fbb48c98ef783ef0, type: 2}
+  farmlandBottom: {fileID: 11400000, guid: 07102319014c95a48813e9ffe104df75, type: 2}
+  irrFarmTopLeft: {fileID: 11400000, guid: fbd297cbec9ef39419520aa4db5de02a, type: 2}
+  irrFarmTopRight: {fileID: 11400000, guid: ce9071d5f33c50c4e84d10de8eb0cff3, type: 2}
+  irrFarmBottomLeft: {fileID: 11400000, guid: b00c75142bc0fca47b64d9616df9d57c, type: 2}
+  irrFarmBottomRight: {fileID: 11400000, guid: 7ceab619a7e43b54894003171968872f, type: 2}
+  irrFarmMiddle: {fileID: 11400000, guid: 29ae958c7afa67b419ac29ac81eaaa1f, type: 2}
+  irrFarmLeft: {fileID: 11400000, guid: 7b11fd9464393524d8861d015b3e38b4, type: 2}
+  irrFarmRight: {fileID: 11400000, guid: 3e423c53ead5ac243b11fb80339f400f, type: 2}
+  irrFarmTop: {fileID: 11400000, guid: d03e7bd408878e0488680af267f5d5cf, type: 2}
+  irrFarmBottom: {fileID: 11400000, guid: 4dde775d0952419428ca0b22392bb92a, type: 2}
