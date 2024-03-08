@@ -38,5 +38,13 @@ public class CarrotSpear : MonoBehaviour
             pumpkinBossMob.health = pumpkinBossMob.health - player.strength;
             Debug.Log(pumpkinBossMob.health);
         }
+        else if (collision.gameObject.TryGetComponent<PumkinEnemy>(out PumkinEnemy pumkinEnemy))
+        {
+            pumkinEnemy.health = pumkinEnemy.health - 4 * player.strength;
+        }
+        else if (collision.gameObject.TryGetComponent<PumkinEnemyBoss>(out PumkinEnemyBoss pumkinEnemyBoss))
+        {
+            pumkinEnemyBoss.health = pumkinEnemyBoss.health - 4 * player.strength;
+        }
     }
 }
