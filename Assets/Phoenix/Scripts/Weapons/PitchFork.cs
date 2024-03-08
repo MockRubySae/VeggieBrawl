@@ -26,17 +26,25 @@ public class PitchFork : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<GarlicEnemy>(out GarlicEnemy garlicMob))
         {
-            garlicMob.health = garlicMob.health - player.strength;
+            garlicMob.health = garlicMob.health - ( 1 + player.strength);
         }
         else if (collision.gameObject.TryGetComponent<PumpkinEnemy>(out PumpkinEnemy pumpkinMob))
         {
-            pumpkinMob.health = pumpkinMob.health - player.strength;
+            pumpkinMob.health = pumpkinMob.health - (1 + player.strength);
         }
         else if (collision.gameObject.TryGetComponent<PumpkinBoss>(out PumpkinBoss pumpkinBossMob))
         {
             Debug.Log("Boss hit!");
-            pumpkinBossMob.health = pumpkinBossMob.health - player.strength;
+            pumpkinBossMob.health = pumpkinBossMob.health - (1 + player.strength);
             Debug.Log(pumpkinBossMob.health);
+        }
+        else if (collision.gameObject.TryGetComponent<PumkinEnemy>(out PumkinEnemy pumkinEnemy))
+        {
+            pumkinEnemy.health = pumkinEnemy.health - (1 + player.strength);
+        }
+        else if (collision.gameObject.TryGetComponent<PumkinEnemyBoss>(out PumkinEnemyBoss pumkinEnemyBoss))
+        {
+            pumkinEnemyBoss.health = pumkinEnemyBoss.health - (1 + player.strength);
         }
     }
 }
