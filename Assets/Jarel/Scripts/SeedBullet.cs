@@ -33,7 +33,7 @@ public class SeedBullet : MonoBehaviour
         {
             bulletHit = true;
             //Debug.Log("Player hit for 4 damage!");
-            player.health = player.health - 4;
+            player.health = player.health - 2;
             Destroy(gameObject);
         }
     }

@@ -19,7 +19,7 @@ public class Fists : MonoBehaviour
     }
     IEnumerator DestroyAfter()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.15f);
         Destroy(gameObject);
     }
     private void OnCollisionEnter(Collision collision)
@@ -32,11 +32,21 @@ public class Fists : MonoBehaviour
         {
             pumpkinMob.health = pumpkinMob.health - player.strength;
         }
+        else if (collision.gameObject.TryGetComponent<CarrotEnemy>(out CarrotEnemy carrotMob))
+        {
+            carrotMob.health = carrotMob.health - player.strength;
+        }
         else if (collision.gameObject.TryGetComponent<PumpkinBoss>(out PumpkinBoss pumpkinBossMob))
         {
             Debug.Log("Boss hit!");
             pumpkinBossMob.health = pumpkinBossMob.health - player.strength;
             Debug.Log(pumpkinBossMob.health);
+        }
+        else if (collision.gameObject.TryGetComponent<CarrotBoss>(out CarrotBoss carrotBossMob))
+        {
+            Debug.Log("Boss hit!");
+            carrotBossMob.health = carrotBossMob.health - player.strength;
+            Debug.Log(carrotBossMob.health);
         }
     }
 }

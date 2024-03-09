@@ -6,13 +6,16 @@ using UnityEngine;
 public class BossSpawner : MonoBehaviour
 {
     public GameObject pumpkinCrawlerBoss;
+    public GameObject carrotSquidBoss;
 
     private GameObject spawnPointA;
 
     private ScoreManager bossManager;
 
     private bool spawnPumpkinBoss = false;
+    private bool spawnCarrotBoss = false;
     private Transform bossSpawnPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +27,20 @@ public class BossSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bossManager.score >= 1800)
+        if (bossManager.score >= 5000)
         {
             if(!spawnPumpkinBoss)
             {
                 Instantiate(pumpkinCrawlerBoss, bossSpawnPoint.transform.position, transform.rotation);
                 spawnPumpkinBoss = true;
+            }
+        }
+        if (bossManager.score >= 10000)
+        {
+            if (!spawnCarrotBoss)
+            {
+                Instantiate(carrotSquidBoss, bossSpawnPoint.transform.position, transform.rotation);
+                spawnCarrotBoss = true;
             }
         }
     }
