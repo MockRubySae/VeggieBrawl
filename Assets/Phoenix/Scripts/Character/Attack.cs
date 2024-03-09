@@ -68,7 +68,7 @@ public class Attack : MonoBehaviour
         currentFists.GetComponent<Rigidbody>().AddForce(currentFists.transform.forward * speedOfFists);
     }
     /*public IEnumerator AttackSpeedOfFists()
-    {
+    { 
         currentlyAttacking = true;
         Fists();
         yield return new WaitForSeconds(0.5f/playerStats.AttackSpeed);
