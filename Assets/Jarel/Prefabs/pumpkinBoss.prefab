@@ -301,7 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 839428780344605923}
   - component: {fileID: 2735389112317853315}
-  - component: {fileID: 554399480429342853}
+  - component: {fileID: 4308675576648304148}
   - component: {fileID: 3760014874396127676}
   - component: {fileID: -2647985368138848585}
   - component: {fileID: -6755853062883643846}
@@ -346,7 +346,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976616053230707840}
   serializedVersion: 4
-  m_Mass: 1000
+  m_Mass: 300
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -365,8 +365,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!135 &554399480429342853
-SphereCollider:
+--- !u!136 &4308675576648304148
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -383,9 +383,11 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 2.1
-  m_Center: {x: 0.1, y: 1.5, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.35
+  m_Height: 2.9
+  m_Direction: 0
+  m_Center: {x: -0.61, y: 0.35, z: 0}
 --- !u!135 &3760014874396127676
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -442,10 +444,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
   playerPos: {fileID: 0}
+  seedLauncher: {fileID: 4225087177427412153}
   health: 8
   isDead: 0
   seed: {fileID: 1507637375094315641, guid: 021710a136b418147b6bbb7dadb467ef, type: 3}
-  speedOfSeed: 3000
+  hoeDrop: {fileID: 3530928800879872796, guid: 0fdd3c49746656f4bb509c4461d899d4, type: 3}
+  speedOfSeed: 100
   pumpkinBossKill: 0
 --- !u!1 &2124994822486715424
 GameObject:

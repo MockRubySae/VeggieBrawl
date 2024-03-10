@@ -346,7 +346,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976616053230707840}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -442,10 +442,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
   playerPos: {fileID: 0}
+  seedLauncher: {fileID: 4225087177427412153}
   health: 4
   isDead: 0
   seed: {fileID: 1507637375094315641, guid: 6d63e6ed46f807a488cdf0cfdf9404ec, type: 3}
-  speedOfSeed: 1500
+  speedOfSeed: 120
+  spawnCounter: {fileID: 0}
 --- !u!1 &2124994822486715424
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,53 +7,125 @@ public class EnemiesSpawner : MonoBehaviour
 {
     public GameObject garlicEnemy;
     public GameObject pumpkinEnemy;
-    //public GameObject carrotEnemy;
+    public GameObject carrotEnemy;
+    public GameObject pumpkinBossEntity;
+    public GameObject carrotBossEntity;
+
+    public Transform spawnPointA;
+    public Transform spawnPointB;
+    public Transform spawnPointC;
+    public Transform spawnPointD;
+
     bool isSpawning = false;
 
-    public PumpkinBoss pumpkinBoss;
     public ScoreManager scoreManager;
+
+    public int spawnCount = 0;
+    public int spawnCap = 25;
+    public int bossThreshold = 0; //set gap between bosses
+
+    int spawnerRandom = 0;
+
+    bool spawnPumpkinBoss = false;
+    bool spawnCarrotBoss = false;
+    bool spawnLimit = false;
+
+    public bool pumpkinBossDead = false;
+    public bool carrotBossDead = false;
+
+    List<Transform> spawnPoints = new List<Transform>();
+
+    void Start()
+    {
+        spawnPointA = GameObject.Find("spawnA").transform;
+        spawnPointB = GameObject.Find("spawnB").transform;
+        spawnPointC = GameObject.Find("spawnC").transform;
+        spawnPointD = GameObject.Find("spawnD").transform;
+
+        spawnPoints.Add(spawnPointA);
+        spawnPoints.Add(spawnPointB);
+        spawnPoints.Add(spawnPointC);
+        spawnPoints.Add(spawnPointD);
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (!isSpawning)
         {
-            isSpawning = true;
-            StartCoroutine(Wait());
+            if (spawnCount <= spawnCap)
+            {
+                isSpawning = true;
+                StartCoroutine(Wait());
+            }
+            else
+            {
+                spawnLimit = true;
+                UnityEngine.Debug.Log("Spawn Limit Reached!");
+            }
         }
-        
+        if (scoreManager.score >= 5000)
+        {
+            if (!spawnPumpkinBoss)
+            {
+                spawnerRandom = Random.Range(0, 4);
+                Transform pumpkinSpawner = spawnPoints[spawnerRandom];
+                Instantiate(pumpkinBossEntity, pumpkinSpawner.position, transform.rotation);
+                spawnPumpkinBoss = true;
+            }
+        }
+        if (scoreManager.score >= (scoreManager.score + 10000))
+        {
+            if (!spawnCarrotBoss)
+            {
+                spawnerRandom = Random.Range(0, 4);
+                Transform carrotSpawner = spawnPoints[spawnerRandom];
+                Instantiate(carrotBossEntity, carrotSpawner.position, transform.rotation);
+                spawnCarrotBoss = true;
+            }
+        }
+
     }
     IEnumerator Wait()
     {
-        if (scoreManager.bossKills == 0)
+        foreach(Transform spawner in spawnPoints)
         {
-            yield return new WaitForSeconds(5);
-            Instantiate(garlicEnemy, transform.position, transform.rotation);
-        }
-        else
-        {
-            int spawnPool = Random.Range(0, 9);
-            yield return new WaitForSeconds(5);
-
-            Instantiate(garlicEnemy, transform.position, transform.rotation);
-            Instantiate(pumpkinEnemy, transform.position, transform.rotation);
-
-            /*if (spawnPool >= 0 && spawnPool <= 5)
+            if (!spawnLimit)
             {
-                Instantiate(garlicEnemy, transform.position, transform.rotation);
-            }
-            if (pumpkinBoss.isDead)
-            {
-                if (spawnPool >= 6 && spawnPool <= 8)
+                int spawnPool = Random.Range(0, 101);
+                UnityEngine.Debug.Log("Spawn pool: " + spawnPool);
+                if (spawnPool >= 1 && spawnPool <= 50)
                 {
-                    Instantiate(pumpkinEnemy, transform.position, transform.rotation);
+                    Instantiate(garlicEnemy, spawner.position, spawner.rotation);
                 }
-            }*/
+                else if (spawnPool >= 51 && spawnPool <= 75)
+                {
+                    if (pumpkinBossDead)
+                    {
+                        UnityEngine.Debug.Log("Spawning pumpkin crawler");
+                        Instantiate(pumpkinEnemy, spawner.position, spawner.rotation);
+                    }
+                    else
+                    {
+                        Instantiate(garlicEnemy, spawner.position, spawner.rotation);
+                    }
+                }
+                else if (spawnPool >= 76 && spawnPool <= 100)
+                {
+                    if (carrotBossDead)
+                    {
+                        UnityEngine.Debug.Log("Spawning carrot squid");
+                        Instantiate(carrotEnemy, spawner.position, spawner.rotation);
+                    }
+                    else
+                    {
+                        Instantiate(garlicEnemy, spawner.position, spawner.rotation);
+                    }
+                }
+            }
+            yield return new WaitForSeconds(2f);
         }
-        
-        /*else if (spawnPool >= 10 && spawnPool <= 12)
-        {
-            Instantiate(carrotEnemy, transform.position, transform.rotation);
-        }*/
+
         isSpawning = false;
     }
 }

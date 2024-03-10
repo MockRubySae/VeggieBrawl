@@ -9,6 +9,7 @@ public class PumpkinBoss : MonoBehaviour
     public PlayerStats stats;
     // make a refreance to the players posision 
     public Transform playerPos;
+    public Transform seedLauncher;
     public float health = 8;
     bool isAttacking = false;
     public bool isDead = false;
@@ -20,11 +21,13 @@ public class PumpkinBoss : MonoBehaviour
     private Animator spriteAnimComp;
 
     public GameObject seed;
-    public float speedOfSeed = 3000f;
+    public GameObject hoeDrop;
+
+    public float speedOfSeed = 100f;
     private bool inRange = false;
     public bool pumpkinBossKill = false;
 
-    private ScoreManager bossManager;
+    EnemiesSpawner enemiesSpawner;
 
     void Start()
     {
@@ -32,7 +35,7 @@ public class PumpkinBoss : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerPos = GameObject.Find("playerNormal").transform;
         stats = GameObject.Find("playerNormal").GetComponent<PlayerStats>();
-        bossManager = GameObject.Find("Canvas").GetComponent<ScoreManager>();
+        enemiesSpawner = GameObject.Find("SpawnPoints").GetComponent<EnemiesSpawner>();
         spriteAnimComp = GetComponent<Animator>();
 
     }
@@ -54,9 +57,8 @@ public class PumpkinBoss : MonoBehaviour
         {
             pumpkinBossKill = true;
             isDead = true;
-            bossManager.bossKills++;
-            spriteAnimComp.Play("pumpkinCrawler_die");
-            StartCoroutine(DestroyEntity());
+            enemiesSpawner.pumpkinBossDead = true;
+            spriteAnimComp.Play("pumpkinBoss_die");
         }
     }
 
@@ -127,24 +129,35 @@ public class PumpkinBoss : MonoBehaviour
 
     void CallDestroy()
     {
+        enemiesSpawner.spawnCap += 25;
         StartCoroutine(DestroyEntity());
     }
 
     IEnumerator DestroyEntity()
     {
-        //   int changeToDrop = Random.Range(0, 10);
-        //   if (changeToDrop >= 8)
-        //   {
-        //        Instantiate(garlicDrop, transform.position, transform.rotation);
-        //   }
+        Instantiate(hoeDrop, transform.position, transform.rotation);
         ScoreManager.instance.EnemyAddPoint(500);
+        enemiesSpawner.bossThreshold = enemiesSpawner.scoreManager.score;
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
     }
     public void PumpkinShoot()
     {
-        GameObject pumpkinSeed = (GameObject)Instantiate(seed, transform.position, transform.rotation);
-        Vector3 directionToPlayer = (playerPos.transform.position - transform.position).normalized;
-        pumpkinSeed.GetComponent<Rigidbody>().AddForce(pumpkinSeed.transform.forward * speedOfSeed);
+        StartCoroutine(SeedFlight());
+    }
+
+    IEnumerator SeedFlight()
+    {
+        GameObject pumpkinSeed = (GameObject)Instantiate(seed, seedLauncher.transform.position, transform.rotation);
+        Vector3 directionToPlayer = (playerPos.transform.position - seedLauncher.transform.position).normalized;
+        Vector3 lastPlayerPos = playerPos.transform.position;
+
+        var speedVector = speedOfSeed * Time.deltaTime;
+        while (pumpkinSeed != null)
+        {
+            pumpkinSeed.transform.position = Vector3.MoveTowards(pumpkinSeed.transform.position, lastPlayerPos, speedVector);
+            yield return null;
+        }
+        Debug.Log("Terminate seed");
     }
 }

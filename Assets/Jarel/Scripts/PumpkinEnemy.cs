@@ -9,6 +9,7 @@ public class PumpkinEnemy : MonoBehaviour
     public PlayerStats stats;
     // make a refreance to the players posision 
     public Transform playerPos;
+    public Transform seedLauncher;
     public float health = 4;
     bool isAttacking = false;
     public bool isDead = false;
@@ -20,17 +21,21 @@ public class PumpkinEnemy : MonoBehaviour
     private Animator spriteAnimComp;
 
     public GameObject seed;
-    public float speedOfSeed = 500f;
+    public float speedOfSeed = 120f;
     private bool inRange = false;
+
+    public EnemiesSpawner spawnCounter;
 
     void Start()
     {
         // give rigid body
+        
         rb = GetComponent<Rigidbody>();
         playerPos = GameObject.Find("playerNormal").transform;
         stats = GameObject.Find("playerNormal").GetComponent<PlayerStats>();
+        spawnCounter = GameObject.Find("SpawnPoints").GetComponent<EnemiesSpawner>();
         spriteAnimComp = GetComponent<Animator>();
-
+        spawnCounter.spawnCount++;
     }
 
     // Update is called once per frame
@@ -121,6 +126,7 @@ public class PumpkinEnemy : MonoBehaviour
 
     void CallDestroy()
     {
+        spawnCounter.spawnCount--;
         StartCoroutine(DestroyEntity());
     }
 
@@ -137,8 +143,21 @@ public class PumpkinEnemy : MonoBehaviour
     }
     public void PumpkinShoot()
     {
-        GameObject pumpkinSeed = (GameObject)Instantiate(seed, transform.position, transform.rotation);
-        Vector3 directionToPlayer = (playerPos.transform.position - transform.position).normalized;
-        pumpkinSeed.GetComponent<Rigidbody>().AddForce(pumpkinSeed.transform.forward * speedOfSeed);
+        StartCoroutine(SeedFlight());
+    }
+
+    IEnumerator SeedFlight()
+    {
+        GameObject pumpkinSeed = (GameObject)Instantiate(seed, seedLauncher.transform.position, transform.rotation);
+        Vector3 directionToPlayer = (playerPos.transform.position - seedLauncher.transform.position).normalized;
+        Vector3 lastPlayerPos = playerPos.transform.position;
+
+        var speedVector = speedOfSeed * Time.deltaTime;
+        while (pumpkinSeed != null)
+        {
+            pumpkinSeed.transform.position = Vector3.MoveTowards(pumpkinSeed.transform.position, lastPlayerPos, speedVector);
+            yield return null;
+        }
+        Debug.Log("Terminate seed");
     }
 }

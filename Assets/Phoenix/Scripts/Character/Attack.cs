@@ -15,23 +15,37 @@ public class Attack : MonoBehaviour
 {
     public GameObject fists;
     public GameObject uiFists;
+
     public GameObject pitchFork; //projectile
     public GameObject uiPitchFork;
+    public GameObject hoeUiEnable;
+
     public GameObject carrotSpear; //projectile
     public GameObject uiCarrotSpear;
+    public GameObject spearUiEnable;
+
     public GameObject playerHoe;
     public GameObject playerSpear;
+
     public float speedOfFists = 1500f;
     public float speedOfPitchFork = 3000f;
     public float speedOfCarrotSpear = 6000f;
+
     public PlayerStats playerStats;
+
     public bool isAttacking = false;
     public bool isFists = false;
     public bool isPitchFork = false;
     public bool isCarrotSpear = false;
     public bool currentlyAttacking = true;
+
+    public bool hoeUpgrade = false;
+    public bool spearUpgrade = false;
+
     Dictionary<string, WeaponsStates> states = new Dictionary<string, WeaponsStates>();
+
     WeaponsStates currentState = null;
+
     public string stateName = "";
     // Start is called before the first frame update
     void Start()
@@ -123,11 +137,17 @@ public class WeaponFists : WeaponsStates
     {
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            manager.ChangeState("PitchForkEnabled");
+            if(manager.hoeUpgrade)
+            {
+                manager.ChangeState("PitchForkEnabled");
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            manager.ChangeState("CarrotSpearEnabled");
+            if(manager.spearUpgrade)
+            {
+                manager.ChangeState("CarrotSpearEnabled");
+            }
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -169,15 +189,21 @@ public class WeaponPitchFork : WeaponsStates
     public WeaponPitchFork(GameObject p, Attack at) { player = p; manager = at; }
     public override void EnterState()
     {
-        manager.isPitchFork = true;
-        manager.uiPitchFork.SetActive(true);
-        manager.playerHoe.SetActive(true);
+        if (manager.hoeUpgrade)
+        {
+            manager.isPitchFork = true;
+            manager.uiPitchFork.SetActive(true);
+            manager.playerHoe.SetActive(true);
+        }
     }
     public override void ExitState()
     {
-        manager.isPitchFork = false;
-        manager.uiPitchFork.SetActive(false);
-        manager.playerHoe.SetActive(false);
+        if (manager.hoeUpgrade)
+        {
+            manager.isPitchFork = false;
+            manager.uiPitchFork.SetActive(false);
+            manager.playerHoe.SetActive(false);
+        }
     }
     public override void Update()
     {
@@ -187,7 +213,10 @@ public class WeaponPitchFork : WeaponsStates
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            manager.ChangeState("CarrotSpearEnabled");
+            if (manager.spearUpgrade)
+            {
+                manager.ChangeState("CarrotSpearEnabled");
+            }
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -221,15 +250,21 @@ public class WeaponCarrotSpear : WeaponsStates
     public WeaponCarrotSpear(GameObject p, Attack at) { player = p; manager = at; }
     public override void EnterState()
     {
-        manager.isCarrotSpear = true;
-        manager.uiCarrotSpear.SetActive(true);
-        manager.playerSpear.SetActive(true);
+        if(manager.spearUpgrade)
+        {
+            manager.isCarrotSpear = true;
+            manager.uiCarrotSpear.SetActive(true);
+            manager.playerSpear.SetActive(true);
+        }
     }
     public override void ExitState()
     {
-        manager.uiCarrotSpear.SetActive(false) ;
-        manager.isCarrotSpear = false ;
-        manager.playerSpear.SetActive(false);
+        if (manager.spearUpgrade)
+        {
+            manager.uiCarrotSpear.SetActive(false);
+            manager.isCarrotSpear = false;
+            manager.playerSpear.SetActive(false);
+        }
     }
     public override void Update()
     {
@@ -239,7 +274,10 @@ public class WeaponCarrotSpear : WeaponsStates
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            manager.ChangeState("PitchForkEnabled");
+            if(manager.hoeUpgrade)
+            {
+                manager.ChangeState("PitchForkEnabled");
+            }
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {

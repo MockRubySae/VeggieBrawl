@@ -20,14 +20,17 @@ public class GarlicEnemy : MonoBehaviour
     public GameObject garlicDrop;
     private Animator spriteAnimComp;
 
+    public EnemiesSpawner spawnCounter;
+
     void Start()
     {
         // give rigid body
         rb = GetComponent<Rigidbody>();
         playerPos = GameObject.Find("playerNormal").transform;
         stats = GameObject.Find("playerNormal").GetComponent<PlayerStats>();
+        spawnCounter = GameObject.Find("SpawnPoints").GetComponent<EnemiesSpawner>();
         spriteAnimComp = GetComponent<Animator>();
-        garlicDrop = GameObject.Find("GarlicDrop");
+        spawnCounter.spawnCount++;
 
     }
 
@@ -72,6 +75,7 @@ public class GarlicEnemy : MonoBehaviour
 
     void CallDestroy()
     {
+        spawnCounter.spawnCount--;
         StartCoroutine(DestroyEntity());
     }
 
