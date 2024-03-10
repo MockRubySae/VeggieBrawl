@@ -5316,12 +5316,12 @@ MonoBehaviour:
   spawnPointB: {fileID: 0}
   spawnPointC: {fileID: 0}
   spawnPointD: {fileID: 0}
-  pumpkinBoss: {fileID: -6755853062883643846, guid: 7388785debe4b8049be3219899e11238, type: 3}
-  carrotBoss: {fileID: -446077993940870074, guid: 9de049092a7923f45a4b45c805f615da, type: 3}
   scoreManager: {fileID: 34156120}
   spawnCount: 0
   spawnCap: 25
   bossThreshold: 0
+  pumpkinBossDead: 0
+  carrotBossDead: 0
 --- !u!1 &1752897513
 GameObject:
   m_ObjectHideFlags: 0
@@ -6235,6 +6235,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 0.14800763
       objectReference: {fileID: 0}
+    - target: {fileID: 3344799440634014604, guid: 9c2c5a30805cef64e92000fbead421a5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.98898625
+      objectReference: {fileID: 0}
     - target: {fileID: 3678402967986393556, guid: 9c2c5a30805cef64e92000fbead421a5, type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.7899947
@@ -6247,6 +6251,10 @@ PrefabInstance:
       propertyPath: CollisionModule.m_Planes.Array.data[0]
       value: 
       objectReference: {fileID: 1072915325}
+    - target: {fileID: 4019618577958012811, guid: 9c2c5a30805cef64e92000fbead421a5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99999684
+      objectReference: {fileID: 0}
     - target: {fileID: 4019618577958012811, guid: 9c2c5a30805cef64e92000fbead421a5, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0025382014

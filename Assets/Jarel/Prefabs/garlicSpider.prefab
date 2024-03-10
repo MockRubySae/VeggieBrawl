@@ -720,7 +720,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5110979896177270965}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.7113644, w: -0.70282346}
+  m_LocalRotation: {x: -0, y: -0, z: -0.6965347, w: -0.71752316}
   m_LocalPosition: {x: 1.226, y: -0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -912,7 +912,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5666857079554386626}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.99850225, w: 0.054711312}
+  m_LocalRotation: {x: 0, y: 0, z: 0.99822545, w: 0.05954914}
   m_LocalPosition: {x: 1.0026689, y: 0.0000003767299, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1186,8 +1186,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6348663735195927952}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.14316842, w: 0.98969835}
-  m_LocalPosition: {x: -0.011047007, y: 0.062729895, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.16857994, w: 0.985688}
+  m_LocalPosition: {x: -0.005268107, y: 0.06384075, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1852,7 +1852,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7802110312025191858}
   serializedVersion: 4
-  m_Mass: 500
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1909,6 +1909,7 @@ MonoBehaviour:
   health: 2
   isDead: 0
   garlicDrop: {fileID: 3530928800879872796, guid: 4d48fd1cb0c9b3c43a95d421fa0ed2dd, type: 3}
+  spawnCounter: {fileID: 0}
 --- !u!1 &7811246394827385239
 GameObject:
   m_ObjectHideFlags: 0

@@ -75,15 +75,18 @@ public class CarrotEnemy : MonoBehaviour
         if (!isDead)
         {
             // Trigger the attack behavior here when the player enters the trigger zone
-            inRange = true;
-            Debug.Log("Player detected, triggering attack behavior!");
-            if (!isAttacking && health > 0)
+            if (other.gameObject.layer == LayerMask.NameToLayer("Default"))
             {
-                isMoving = false;
-                isAttacking = true;
-                speed = 0f;
-                spriteAnimComp.Play("carrotSquid_attackDig");
-                //StartCoroutine(Wait());
+                inRange = true;
+                Debug.Log("Player detected, triggering attack behavior!");
+                if (!isAttacking && health > 0)
+                {
+                    isMoving = false;
+                    isAttacking = true;
+                    speed = 0f;
+                    spriteAnimComp.Play("carrotSquid_attackDig");
+                    //StartCoroutine(Wait());
+                }
             }
         }
     }
