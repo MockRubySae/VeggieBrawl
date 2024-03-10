@@ -413,7 +413,6 @@ MonoBehaviour:
   scoreText: {fileID: 778357657}
   highscoreText: {fileID: 577403832}
   score: 0
-  bossKills: 0
   period: 1
 --- !u!114 &34156121
 MonoBehaviour:
@@ -758,9 +757,8 @@ GameObject:
   - component: {fileID: 194594773}
   - component: {fileID: 194594776}
   - component: {fileID: 194594775}
-  - component: {fileID: 194594777}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: spawnA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -775,7 +773,7 @@ Transform:
   m_GameObject: {fileID: 194594772}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.31, z: 60.4}
+  m_LocalPosition: {x: 0, y: 5.31, z: 60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -831,22 +829,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194594772}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &194594777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 194594772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2bfe75a6666f3409f001c80c27014e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  garlicEnemy: {fileID: 7802110312025191858, guid: 825d49beb75365f4faee3655d4d23b43, type: 3}
-  pumpkinEnemy: {fileID: 1976616053230707840, guid: 1523d2a4ec37cfa40a844f7ea4602e8a, type: 3}
-  pumpkinBoss: {fileID: -6755853062883643846, guid: 7388785debe4b8049be3219899e11238, type: 3}
-  scoreManager: {fileID: 34156120}
 --- !u!1 &209772949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,9 +1853,8 @@ GameObject:
   - component: {fileID: 485225015}
   - component: {fileID: 485225018}
   - component: {fileID: 485225017}
-  - component: {fileID: 485225019}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: spawnC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1888,7 +1869,7 @@ Transform:
   m_GameObject: {fileID: 485225014}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 51.1, y: 5.31, z: 0.7}
+  m_LocalPosition: {x: 60, y: 5.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1944,22 +1925,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485225014}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &485225019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 485225014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2bfe75a6666f3409f001c80c27014e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  garlicEnemy: {fileID: 7802110312025191858, guid: 825d49beb75365f4faee3655d4d23b43, type: 3}
-  pumpkinEnemy: {fileID: 1976616053230707840, guid: 1523d2a4ec37cfa40a844f7ea4602e8a, type: 3}
-  pumpkinBoss: {fileID: -6755853062883643846, guid: 7388785debe4b8049be3219899e11238, type: 3}
-  scoreManager: {fileID: 34156120}
 --- !u!1 &504363742
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,9 +3300,8 @@ GameObject:
   - component: {fileID: 912881475}
   - component: {fileID: 912881478}
   - component: {fileID: 912881477}
-  - component: {fileID: 912881479}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: spawnD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3352,7 +3316,7 @@ Transform:
   m_GameObject: {fileID: 912881474}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33, y: 5.31, z: 0.7}
+  m_LocalPosition: {x: -60, y: 5.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3408,22 +3372,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912881474}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &912881479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912881474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2bfe75a6666f3409f001c80c27014e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  garlicEnemy: {fileID: 7802110312025191858, guid: 825d49beb75365f4faee3655d4d23b43, type: 3}
-  pumpkinEnemy: {fileID: 1976616053230707840, guid: 1523d2a4ec37cfa40a844f7ea4602e8a, type: 3}
-  pumpkinBoss: {fileID: -6755853062883643846, guid: 7388785debe4b8049be3219899e11238, type: 3}
-  scoreManager: {fileID: 34156120}
 --- !u!1 &949933176 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7641999040430872125, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
@@ -3933,9 +3881,8 @@ GameObject:
   - component: {fileID: 1060205259}
   - component: {fileID: 1060205262}
   - component: {fileID: 1060205261}
-  - component: {fileID: 1060205263}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: spawnB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3950,7 +3897,7 @@ Transform:
   m_GameObject: {fileID: 1060205258}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.31, z: -43.7}
+  m_LocalPosition: {x: 0, y: 5.31, z: -60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4006,22 +3953,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060205258}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1060205263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060205258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2bfe75a6666f3409f001c80c27014e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  garlicEnemy: {fileID: 7802110312025191858, guid: 825d49beb75365f4faee3655d4d23b43, type: 3}
-  pumpkinEnemy: {fileID: 1976616053230707840, guid: 1523d2a4ec37cfa40a844f7ea4602e8a, type: 3}
-  pumpkinBoss: {fileID: -6755853062883643846, guid: 7388785debe4b8049be3219899e11238, type: 3}
-  scoreManager: {fileID: 34156120}
 --- !u!1 &1072915321
 GameObject:
   m_ObjectHideFlags: 0
@@ -4122,7 +4053,7 @@ Transform:
   m_GameObject: {fileID: 1072915321}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4218, y: 1.4586096, z: -2.4429}
+  m_LocalPosition: {x: 1.4218, y: 0, z: -2.4429}
   m_LocalScale: {x: 750000, y: 1, z: 750000}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5505,9 +5436,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1453655684}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1453655685}
     - targetCorrespondingSourceObject: {fileID: 4445930243089806264, guid: 15aac8b8eba4f594f95f4e9a67721b34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1331941262}
@@ -5983,8 +5911,10 @@ MonoBehaviour:
   uiFists: {fileID: 171606154}
   pitchFork: {fileID: 8953899379537017334, guid: 036cf224b01a4334aac4fd7f2726949d, type: 3}
   uiPitchFork: {fileID: 504363742}
+  hoeUiEnable: {fileID: 0}
   carrotSpear: {fileID: 8660883942882892911, guid: 31e654e4314104943868ff798f881f1f, type: 3}
   uiCarrotSpear: {fileID: 1928134530}
+  spearUiEnable: {fileID: 0}
   playerHoe: {fileID: 432118465}
   playerSpear: {fileID: 1396658454}
   speedOfFists: 1500
@@ -5996,77 +5926,9 @@ MonoBehaviour:
   isPitchFork: 0
   isCarrotSpear: 0
   currentlyAttacking: 0
+  hoeUpgrade: 0
+  spearUpgrade: 0
   stateName: 
---- !u!114 &1453655685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1083143742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad326257f993fa4fb3f3d63d8a1646c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pumpkinCrawlerBoss: {fileID: 1976616053230707840, guid: 7388785debe4b8049be3219899e11238, type: 3}
---- !u!1001 &1474625383
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3147957620799517587, guid: 4d48fd1cb0c9b3c43a95d421fa0ed2dd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.544147
-      objectReference: {fileID: 0}
-    - target: {fileID: 3147957620799517587, guid: 4d48fd1cb0c9b3c43a95d421fa0ed2dd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -18.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 3147957620799517587, guid: 4d48fd1cb0c9b3c43a95d421fa0ed2dd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 8.584999
-      objectReference: {fileID: 0}
-    - target: {fileID: 3147957620799517587, guid: 4d48fd1cb0c9b3c43a95d421fa0ed2dd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3147957620799517587, guid: 4d48fd1cb0c9b3c43a95d421fa0ed2dd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3147957620799517587, guid: 4d48fd1cb0c9b3c43a95d421fa0ed2dd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3147957620799517587, guid: 4d48fd1cb0c9b3c43a95d421fa0ed2dd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3147957620799517587, guid: 4d48fd1cb0c9b3c43a95d421fa0ed2dd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3147957620799517587, guid: 4d48fd1cb0c9b3c43a95d421fa0ed2dd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3147957620799517587, guid: 4d48fd1cb0c9b3c43a95d421fa0ed2dd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3530928800879872796, guid: 4d48fd1cb0c9b3c43a95d421fa0ed2dd, type: 3}
-      propertyPath: m_Name
-      value: GarlicDrop
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4d48fd1cb0c9b3c43a95d421fa0ed2dd, type: 3}
 --- !u!1 &1496854485
 GameObject:
   m_ObjectHideFlags: 0
@@ -6218,7 +6080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1542013004
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6368,7 +6230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1606238477
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6477,6 +6339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1684672199}
   - component: {fileID: 1684672200}
+  - component: {fileID: 1684672201}
   m_Layer: 0
   m_Name: SpawnPoints
   m_TagString: Untagged
@@ -6516,6 +6379,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPos: {fileID: 1331941258}
+--- !u!114 &1684672201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684672198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2bfe75a6666f3409f001c80c27014e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  garlicEnemy: {fileID: 7802110312025191858, guid: 825d49beb75365f4faee3655d4d23b43, type: 3}
+  pumpkinEnemy: {fileID: 1976616053230707840, guid: 1523d2a4ec37cfa40a844f7ea4602e8a, type: 3}
+  carrotEnemy: {fileID: 6820899128655420450, guid: 7201913b1f94ba64bb34d79f60c77b8f, type: 3}
+  pumpkinBossEntity: {fileID: 1976616053230707840, guid: 7388785debe4b8049be3219899e11238, type: 3}
+  carrotBossEntity: {fileID: 6820899128655420450, guid: 9de049092a7923f45a4b45c805f615da, type: 3}
+  spawnPointA: {fileID: 0}
+  spawnPointB: {fileID: 0}
+  spawnPointC: {fileID: 0}
+  spawnPointD: {fileID: 0}
+  scoreManager: {fileID: 34156120}
+  spawnCount: 0
+  spawnCap: 25
+  bossThreshold: 0
+  pumpkinBossDead: 0
+  carrotBossDead: 0
 --- !u!1 &1693856397
 GameObject:
   m_ObjectHideFlags: 0
@@ -12284,6 +12174,5 @@ SceneRoots:
   - {fileID: 1684672199}
   - {fileID: 34156118}
   - {fileID: 433473132}
-  - {fileID: 1474625383}
   - {fileID: 295994994}
   - {fileID: 655454251}
