@@ -74,7 +74,7 @@ public class EnemiesSpawner : MonoBehaviour
                 spawnPumpkinBoss = true;
             }
         }
-        if (scoreManager.score >= (scoreManager.score + 10000))
+        if (scoreManager.score >= (bossThreshold + 10000))
         {
             if (!spawnCarrotBoss)
             {

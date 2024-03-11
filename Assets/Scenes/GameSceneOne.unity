@@ -5911,10 +5911,10 @@ MonoBehaviour:
   uiFists: {fileID: 171606154}
   pitchFork: {fileID: 8953899379537017334, guid: 036cf224b01a4334aac4fd7f2726949d, type: 3}
   uiPitchFork: {fileID: 504363742}
-  hoeUiEnable: {fileID: 0}
+  hoeUiEnable: {fileID: 1542013003}
   carrotSpear: {fileID: 8660883942882892911, guid: 31e654e4314104943868ff798f881f1f, type: 3}
   uiCarrotSpear: {fileID: 1928134530}
-  spearUiEnable: {fileID: 0}
+  spearUiEnable: {fileID: 1606238476}
   playerHoe: {fileID: 432118465}
   playerSpear: {fileID: 1396658454}
   speedOfFists: 1500
